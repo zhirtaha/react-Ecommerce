@@ -2,7 +2,6 @@ import React from "react";
 import { Row, Col, Button, Container, Alert } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { RemoveFromCart } from "../features/CartSlice";
-import { Increase } from "../features/CartSlice";
 function Cart() {
   const cart = useSelector((state) => state.CartSlice.cart);
   console.log(cart);
@@ -19,6 +18,8 @@ function Cart() {
       </Container>
     );
   };
+
+  
   return (
     <>
       {cart.map((item, index) => {
@@ -56,7 +57,7 @@ function Cart() {
                     size="lg"
                     onClick={() => dispatch(RemoveFromCart(item._id))}
                   >
-                    Remove
+                    <i className="fa fa-trash fa-lg"></i> Remove
                   </Button>
                 </div>
               </Col>

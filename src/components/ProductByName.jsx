@@ -1,17 +1,17 @@
 import React from "react";
 import { useGetProductsQuery } from "../services/product-api";
 import { Link, useParams } from "react-router-dom";
-import { Card, Container, Button, Row, Col,Spinner } from "react-bootstrap";
+import { Card, Container, Button, Row, Col, Spinner } from "react-bootstrap";
 function ProductByName() {
   const { data = [], isLoading } = useGetProductsQuery();
   const { name } = useParams();
-  if (isLoading) return(
-    <Spinner animation="grow" variant="secondary" role="status">
+  if (isLoading)
+    return (
+      <Spinner animation="grow" variant="secondary" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
-  )
+    );
   let newdata = data.filter((pro) => pro.category === name);
-  console.log(newdata);
   return (
     <>
       <Container>
