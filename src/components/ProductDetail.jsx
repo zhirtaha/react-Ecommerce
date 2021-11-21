@@ -1,12 +1,12 @@
 import React from "react";
-import { Container, Row, Col, Spinner } from "react-bootstrap";
+import { Container, Row, Col, Spinner,Alert } from "react-bootstrap";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../features/CartSlice";
 import { useGetProductByIdQuery } from "../services/product-api";
 const ProductDetail = () => {
   const { id } = useParams();
-  const { data = [], isLoading } = useGetProductByIdQuery(id);
+  const { data = [], isLoading, isError } = useGetProductByIdQuery(id);
 
   const dispatch = useDispatch();
   if (isLoading)
@@ -14,6 +14,13 @@ const ProductDetail = () => {
       <Spinner animation="grow" variant="secondary" role="status">
         <span className="visually-hidden">Loading...</span>
       </Spinner>
+    );
+
+    if (isError)
+    return (
+      <div className="text-center">
+        <Alert variant="danger">An Error Occured while fetching the data.</Alert>
+      </div>
     );
 
   return (

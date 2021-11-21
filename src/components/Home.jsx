@@ -9,7 +9,8 @@ const Home = () => {
         <Row style={{ backgroundColor: "#f7f7f7" }}>
           <Col className="m-auto" md={6}>
             <h1 className="text-center fw-bold display-4">
-              Welcome to <span className="text-secondary fw-bold">Shop Circle</span>
+              Welcome to{" "}
+              <span className="text-secondary fw-bold">Shop Circle</span>
             </h1>
             <p className="lead text-center">Explore New Products!</p>
             <div className="text-center">
@@ -18,7 +19,7 @@ const Home = () => {
               </Button>
             </div>
           </Col>
-          <Col md={6}  className="d-flex justify-content-center">
+          <Col md={6} className="d-flex justify-content-center">
             <img
               src="https://cdn-icons.flaticon.com/png/512/2872/premium/2872596.png?token=exp=1637430596~hmac=b81b4746dfe84bdf31ce1829201fea28"
               className="img-fluid"
@@ -26,15 +27,15 @@ const Home = () => {
               height="200px"
               width="200px"
             />
-             <Col md={6}  className="d-flex justify-content-center m-2 p-2">
-            <img
-              src="https://cdn-icons.flaticon.com/png/512/2334/premium/2334872.png?token=exp=1637430172~hmac=83df425922b2604984ff1691411a11d0"
-              className="img-fluid"
-              alt="background"
-              height="200px"
-              width="200px"
-            />
-          </Col>
+            <Col md={6} className="d-flex justify-content-center m-2 p-2">
+              <img
+                src="https://cdn-icons.flaticon.com/png/512/2334/premium/2334872.png?token=exp=1637430172~hmac=83df425922b2604984ff1691411a11d0"
+                className="img-fluid"
+                alt="background"
+                height="200px"
+                width="200px"
+              />
+            </Col>
           </Col>
         </Row>
       </Container>

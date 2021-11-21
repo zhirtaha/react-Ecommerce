@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Spinner,Alert } from "react-bootstrap";
+import { Card, Button, Spinner, Alert } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../services/product-api";
 function ProductCard() {
@@ -10,10 +10,12 @@ function ProductCard() {
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );
-    if (isError)
+  if (isError)
     return (
       <div className="text-center">
-        <Alert variant="danger">An Error Occured while fetching the data.</Alert>
+        <Alert variant="danger">
+          An Error Occured while fetching the data.
+        </Alert>
       </div>
     );
   return (
@@ -21,9 +23,9 @@ function ProductCard() {
       {data.map((item, index) => {
         return (
           <Card
-            style={{ width: "18rem" }}
+            style={{ width: "17rem" }}
             border="secondary"
-            className="m-5 p-4"
+            className="m-5 p-3"
             key={index}
           >
             <Card.Img variant="top" src={item.image} />
