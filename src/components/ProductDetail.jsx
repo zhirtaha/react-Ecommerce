@@ -1,9 +1,10 @@
 import React from "react";
-import { Container, Row, Col, Spinner,Alert } from "react-bootstrap";
+import { Container, Row, Col, Spinner,Alert,Button } from "react-bootstrap";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../features/CartSlice";
 import { useGetProductByIdQuery } from "../services/product-api";
+import { Link } from "react-router-dom";
 const ProductDetail = () => {
   const { id } = useParams();
   const { data = [], isLoading, isError } = useGetProductByIdQuery(id);
@@ -33,12 +34,13 @@ const ProductDetail = () => {
             <h3 className="text-center">${data.price}</h3>
             <p className="text-center">{data.description}</p>
             <div className="text-center">
-              <button
+              <Button
                 onClick={() => dispatch(AddToCart(data))}
-                className="btn btn-secondary rounded mb-4 btn-lg "
+                className="btn btn-secondary rounded mb-4"
               >
                 Add To Cart
-              </button>
+              </Button>
+              <Button as={Link} variant="secondary" className="mb-4 ms-2" to="/products">Go Back To Products</Button>
             </div>
           </Col>
           <Col md={6} className="d-flex justify-content-center">

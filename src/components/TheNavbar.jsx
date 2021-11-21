@@ -6,7 +6,7 @@ const TheNavbar = () => {
   const { cart } = useSelector((state) => state.CartSlice);
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#fff" }} expand="lg" variant="light">
+      <Navbar style={{ backgroundColor: "#f1f1f1" }} expand="lg" variant="light">
         <Container>
           <Navbar.Brand className="fw-bold">Shop Circle</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />

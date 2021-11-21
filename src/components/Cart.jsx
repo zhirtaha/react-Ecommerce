@@ -49,22 +49,22 @@ function Cart() {
                 <hr />
                 <h5 className="text-center">${item.price}</h5>
               </Col>
-              <Col md={2}>
+              <Col md={2}>        
                 <h4 className="text-center text-secondary">Quantity</h4>
                 <hr />
                 <div className="text-center">
                   <Button
                     variant="secondary"
-                    size="sm"
-                    className="m-1"
+                    size="sm"            
+                    className="m-1"                          
                     onClick={() => dispatch(Decrease_Quantity(item._id))}
                   >
                     -
                   </Button>
-                  <span className="m-1">{item.quantity}</span>
+                  <div className="m-1 d-inline">{item.quantity}</div>
                   <Button
                     variant="secondary"
-                    size="sm"
+                    size="sm"           
                     className="m-1"
                     onClick={() => dispatch(Increase_Quantity(item._id))}
                   >
@@ -77,7 +77,7 @@ function Cart() {
                 <hr />
                 <h5 className="text-center">{item.price * item.quantity}</h5>
               </Col>
-              <Col md={2}>
+              <Col md={2}>                                                                                                                              
                 <h4 className="text-center text-secondary">Remove</h4>
                 <hr />
                 <div className="text-center">
