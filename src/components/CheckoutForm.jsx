@@ -304,21 +304,12 @@ function CheckoutForm() {
                   </div>
                 </div>
                 <div className="col-md-3 mb-3">
-                  <label htmlFor="cc-cvv">CVV</label>
-                  <input
-                    type="text"
-                    className="form-control"
-                    id="cc-cvv"
-                    placeholder=""
-                    required=""
-                  />
                   <div className="invalid-feedback">Security code required</div>
                 </div>
               </div>
               <hr className="mb-4" />
               <button
                 className="btn btn-primary btn-lg btn-block"
-                type="submit"
               >
                 Continue to checkout
               </button>

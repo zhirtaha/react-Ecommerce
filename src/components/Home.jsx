@@ -1,7 +1,7 @@
 import React from "react";
 import { Row, Col, Container, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import ProductList from "./ProductList";
+import CategoriesList from "./CategoriesList";
 const Home = () => {
   return (
     <div>
@@ -12,9 +12,9 @@ const Home = () => {
               Welcome to{" "}
               <span className="text-secondary fw-bold">Shop Circle</span>
             </h1>
-            <p className="lead text-center">Explore New Products!</p>
+            <p className="display-6 text-center">A circle for shopping!</p>
             <div className="text-center">
-              <Button variant="secondary" size="lg" as={Link} to="/products">
+              <Button variant="success" size="lg" as={Link} to="/products">
                 Shop Now
               </Button>
             </div>
@@ -83,7 +83,7 @@ const Home = () => {
           </Col>
         </Row>
       </Container>
-      <ProductList />
+      <CategoriesList />
     </div>
   );
 };

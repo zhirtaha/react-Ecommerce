@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 function LoginForm() {
   const [input, setinput] = useState({});
 
@@ -39,6 +40,9 @@ function LoginForm() {
             Log In
           </Button>
         </Form>
+       <div className="text-center">
+         <span className="text-reset">New To Shop Circle create a new account?</span> <Link to="/register" className="text-reset">Sign Up</Link>
+       </div>
       </Container>
     </>
   );

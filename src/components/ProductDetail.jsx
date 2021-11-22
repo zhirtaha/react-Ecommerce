@@ -35,8 +35,8 @@ const ProductDetail = () => {
             <hr />
             <h3 className="text-center">${data.price}</h3>
             <p className="text-center">{data.description}</p>
-            <div className="text-center">    
-              <Button as={Link} variant="secondary" to="/products" className="rounded mb-4 m-2">Go  To Products</Button>
+            <div className="text-center">
+              <Button className="mb-3 me-2" as={Link} to="/products"  variant="secondary">Go back to products</Button>
               <Button
                 onClick={() => dispatch(AddToCart(data))}
                 className="btn btn-secondary rounded mb-4 m-2"
@@ -44,14 +44,14 @@ const ProductDetail = () => {
               >
                 Add To Cart
               </Button>
-              <Button as={Link} variant="secondary" to="/cart" className=" rounded mb-4 m-2">Go To cart</Button>
+              <Button className="mb-3 ms-2" as={Link} to="/cart" variant="secondary">Go to cart</Button>
             </div>
           </Col>
           <Col md={6} className="d-flex justify-content-center">
             <img
               src={data.image}
               alt={data.name}
-              height="300px"
+              height="150px"
               width="300px"
               className="img-fluid"
             />

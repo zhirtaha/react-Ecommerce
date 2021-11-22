@@ -25,10 +25,15 @@ function ProductCard() {
           <Card
             style={{ width: "17rem" }}
             border="secondary"
-            className="m-5 p-3"
+            className="m-5 p-2"
             key={index}
           >
-            <Card.Img variant="top" src={item.image} />
+            <Card.Img
+              variant="top"
+              height="250px"
+              width="250px"
+              src={item.image}
+            />
             <Card.Body>
               <Card.Text>{item.category}</Card.Text>
               <Card.Title>{item.name}</Card.Title>
@@ -37,7 +42,6 @@ function ProductCard() {
                 as={Link}
                 to={`/products/${item._id}`}
                 variant="secondary"
-                
               >
                 Buy Now
               </Button>

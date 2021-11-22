@@ -1,5 +1,5 @@
 import React from "react";
-import { Row, Col, Button, Container, Alert } from "react-bootstrap";
+import { Button, Container, Alert, Table } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { RemoveFromCart } from "../features/CartSlice";
@@ -12,7 +12,7 @@ function Cart() {
   const emptycart = () => {
     return (
       <Container>
-        <div className="text-center mt-4 mb-4">
+        <div className="text-center">
           <Alert variant="info" className="display-6">
             Your Cart Is Empty
           </Alert>
@@ -33,79 +33,77 @@ function Cart() {
 
   return (
     <>
-      {cart.map((item, index) => {
-        return (
-          <Container key={index} className="my-4 py-4">
-            <Row>
-              <Col md={2}>
-                <h4 className="text-center text-secondary">Product Image</h4>
-                <hr />
-                <div className="text-center">
-                  <img
-                    src={item.image}
-                    alt={item.name}
-                    className="img-fluid"
-                    height="180px"
-                    width="180px"
-                  />
-                </div>
-              </Col>
-              <Col md={2}>
-                <h4 className="text-center text-secondary">Product Name</h4>
-                <hr />
-                <h5 className="text-center">{item.name}</h5>
-              </Col>
-              <Col md={2}>
-                <h4 className="text-center text-secondary">Price</h4>
-                <hr />
-                <h5 className="text-center">${item.price}</h5>
-              </Col>
-              <Col md={2}>
-                <h4 className="text-center text-secondary">Quantity</h4>
-                <hr />
-                <div className="text-center">
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="m-1"
-                    onClick={() => dispatch(Decrease_Quantity(item._id))}
-                  >
-                    -
-                  </Button>
-                  <div className="m-1 d-inline">{item.quantity}</div>
-                  <Button
-                    variant="secondary"
-                    size="sm"
-                    className="m-1"
-                    onClick={() => dispatch(Increase_Quantity(item._id))}
-                  >
-                    +
-                  </Button>
-                </div>
-              </Col>
-              <Col md={2}>
-                <h4 className="text-center text-secondary">Total Price</h4>
-                <hr />
-                <h5 className="text-center">{item.price * item.quantity}</h5>
-              </Col>
-              <Col md={2}>
-                <h4 className="text-center text-secondary">Remove</h4>
-                <hr />
-                <div className="text-center">
-                  <Button
-                    variant="danger"
-                    onClick={() => dispatch(RemoveFromCart(item._id))}
-                  >
-                    <i className="fa fa-trash fa-lg"></i> Remove
-                  </Button>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        );
-      })}
-      {cart.length === 0 && emptycart()}
-      {cart.length !== 0 && checkbtn()}
+      <Container className="my-4 py-4">
+        <div>
+          <Table bordered responsive>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th className="text-center">Product Image</th>
+                <th className="text-center">Product Name</th>
+                <th className="text-center">Price</th>
+                <th className="text-center">Quantity</th>
+                <th className="text-center">Total</th>
+                <th className="text-center">Remove</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((item, index) => {
+                return (
+                  <tr key={index}>
+                    <td></td>
+                    <td className="text-center">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="img-fluid"
+                        height="160px"
+                        width="160px"
+                      />
+                    </td>
+                    <td className="text-center">{item.name}</td>
+                    <td className="text-center">{item.price}</td>
+                    <td>
+                      <div className="text-center col-xs-12">
+                        <Button
+                          className="me-1"
+                          variant="secondary"
+                          onClick={() => dispatch(Decrease_Quantity(item._id))}
+                        >
+                          -
+                        </Button>
+                        {item.quantity}
+                        <Button
+                          className="ms-1"
+                          variant="secondary"
+                          onClick={() => dispatch(Increase_Quantity(item._id))}
+                        >
+                          +
+                        </Button>
+                      </div>
+                    </td>
+                    <td className="text-center">
+                      {item.price * item.quantity}
+                    </td>
+                    <td>
+                      <div className="text-center">
+                        <Button
+                          variant="danger"
+                          onClick={() => dispatch(RemoveFromCart(item._id))}
+                        >
+                          <i className="fa fa-trash"></i> Remove
+                        </Button>
+                      </div>
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </Table>
+        </div>
+        {cart.length === 0 && emptycart()}
+        {cart.length !== 0 && checkbtn()}
+      </Container>
     </>
   );
 }

@@ -1,38 +1,38 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import TheNavbar from "./components/TheNavbar";
-import Home from "./components/Home";
-import ProductList from "./components/ProductList";
-import AboutUs from "./components/AboutUs";
-import ContactForm from "./components/ContactForm";
-import TheFooter from "./components/TheFooter";
-import ProductDetail from "./components/ProductDetail";
-import Cart from "./components/Cart";
-import CategoriesList from "./components/CategoriesList";
-import ProductByName from "./components/ProductByName";
-import LoginForm from "./components/LoginForm";
-import RegisterForm from "./components/RegisterForm";
-import PageNotFound from "./components/PageNotFound";
-import CheckoutForm from "./components/CheckoutForm";
+import HomePage from "./pages/HomePage";
+import AboutUsPage from "./pages/AboutUsPage";
+import ProductDetailPage from "./pages/ProductDetailPage";
+import ContactPage from "./pages/ContactPage";
+import CartPage from "./pages/CartPage";
+import CategoriesPage from "./pages/CategoriesPage";
+import ProductByNamePage from "./pages/ProductByNamePage";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import CheckoutPage from "./pages/CheckoutPage";
+import ErrorPage from "./pages/ErrorPage";
+import NavbarPage from "./pages/NavbarPage";
+import FooterPage from "./pages/FooterPage";
+import ProductsPage from "./pages/ProductsPage";
 function App() {
   return (
     <div className="App">
-      <TheNavbar />
+      <NavbarPage />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/products" element={<ProductList />} />
-        <Route path="/products/:id" element={<ProductDetail />} />
-        <Route path="/about" element={<AboutUs />} />
-        <Route path="/contact" element={<ContactForm />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/categories" element={<CategoriesList />} />
-        <Route path="/categories/:name" element={<ProductByName />} />
-        <Route path="/login" element={<LoginForm/>} />
-        <Route path="/register" element={<RegisterForm/>} />
-        <Route path="/checkout" element={<CheckoutForm/>}/>
-        <Route path="*" element={<PageNotFound/>}/>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
+        <Route path="/products/:id" element={<ProductDetailPage />} />
+        <Route path="/about" element={<AboutUsPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/categories" element={<CategoriesPage />} />
+        <Route path="/categories/:name" element={<ProductByNamePage />} />
+        <Route path="/login" element={<LoginPage/>} />
+        <Route path="/register" element={<RegisterPage/>} />
+        <Route path="/checkout" element={<CheckoutPage/>}/>
+        <Route path="*" element={<ErrorPage/>}/>
       </Routes>
-      <TheFooter />
+      <FooterPage/>
     </div>
   );
 }
