@@ -13,6 +13,7 @@ import ProductByName from "./components/ProductByName";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import PageNotFound from "./components/PageNotFound";
+import CheckoutForm from "./components/CheckoutForm";
 function App() {
   return (
     <div className="App">
@@ -28,6 +29,7 @@ function App() {
         <Route path="/categories/:name" element={<ProductByName />} />
         <Route path="/login" element={<LoginForm/>} />
         <Route path="/register" element={<RegisterForm/>} />
+        <Route path="/checkout" element={<CheckoutForm/>}/>
         <Route path="*" element={<PageNotFound/>}/>
       </Routes>
       <TheFooter />

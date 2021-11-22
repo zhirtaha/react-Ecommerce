@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col, Spinner,Alert,Button } from "react-bootstrap";
+import { Container, Row, Col, Spinner, Alert, Button } from "react-bootstrap";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../features/CartSlice";
@@ -17,10 +17,12 @@ const ProductDetail = () => {
       </Spinner>
     );
 
-    if (isError)
+  if (isError)
     return (
       <div className="text-center">
-        <Alert variant="danger">An Error Occured while fetching the data.</Alert>
+        <Alert variant="danger">
+          An Error Occured while fetching the data.
+        </Alert>
       </div>
     );
 
@@ -33,14 +35,16 @@ const ProductDetail = () => {
             <hr />
             <h3 className="text-center">${data.price}</h3>
             <p className="text-center">{data.description}</p>
-            <div className="text-center">
+            <div className="text-center">    
+              <Button as={Link} variant="secondary" to="/products" className="rounded mb-4 m-2">Go  To Products</Button>
               <Button
                 onClick={() => dispatch(AddToCart(data))}
-                className="btn btn-secondary rounded mb-4"
+                className="btn btn-secondary rounded mb-4 m-2"
+                variant="success"
               >
                 Add To Cart
               </Button>
-              <Button as={Link} variant="secondary" className="mb-4 ms-2" to="/products">Go Back To Products</Button>
+              <Button as={Link} variant="secondary" to="/cart" className=" rounded mb-4 m-2">Go To cart</Button>
             </div>
           </Col>
           <Col md={6} className="d-flex justify-content-center">

@@ -1,6 +1,7 @@
 import React from "react";
 import { Row, Col, Button, Container, Alert } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 import { RemoveFromCart } from "../features/CartSlice";
 import { Increase_Quantity } from "../features/CartSlice";
 import { Decrease_Quantity } from "../features/CartSlice";
@@ -11,12 +12,22 @@ function Cart() {
   const emptycart = () => {
     return (
       <Container>
-        <div className="text-center">
+        <div className="text-center mt-4 mb-4">
           <Alert variant="info" className="display-6">
             Your Cart Is Empty
           </Alert>
         </div>
       </Container>
+    );
+  };
+
+  const checkbtn = () => {
+    return (
+      <div className="text-center mb-3">
+        <Button as={Link} to="/checkout" variant="success" size="lg">
+          Checkout
+        </Button>
+      </div>
     );
   };
 
@@ -49,14 +60,14 @@ function Cart() {
                 <hr />
                 <h5 className="text-center">${item.price}</h5>
               </Col>
-              <Col md={2}>        
+              <Col md={2}>
                 <h4 className="text-center text-secondary">Quantity</h4>
                 <hr />
                 <div className="text-center">
                   <Button
                     variant="secondary"
-                    size="sm"            
-                    className="m-1"                          
+                    size="sm"
+                    className="m-1"
                     onClick={() => dispatch(Decrease_Quantity(item._id))}
                   >
                     -
@@ -64,7 +75,7 @@ function Cart() {
                   <div className="m-1 d-inline">{item.quantity}</div>
                   <Button
                     variant="secondary"
-                    size="sm"           
+                    size="sm"
                     className="m-1"
                     onClick={() => dispatch(Increase_Quantity(item._id))}
                   >
@@ -77,7 +88,7 @@ function Cart() {
                 <hr />
                 <h5 className="text-center">{item.price * item.quantity}</h5>
               </Col>
-              <Col md={2}>                                                                                                                              
+              <Col md={2}>
                 <h4 className="text-center text-secondary">Remove</h4>
                 <hr />
                 <div className="text-center">
@@ -94,6 +105,7 @@ function Cart() {
         );
       })}
       {cart.length === 0 && emptycart()}
+      {cart.length !== 0 && checkbtn()}
     </>
   );
 }

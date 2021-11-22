@@ -37,7 +37,7 @@ function ProductCard() {
                 as={Link}
                 to={`/products/${item._id}`}
                 variant="secondary"
-                size="lg"
+                
               >
                 Buy Now
               </Button>

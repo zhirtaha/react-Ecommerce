@@ -15,20 +15,20 @@ export const ApiSlice = createApi({
       getProductById: builder.query({
         query: (id) => `/products/${id}`,
       }),
-      registerUser: builder.mutation({
-        query: (userObj) => ({
-          url: "/register",
-          method: "POST",
-          body: userObj,
-        }),
-      }),
-      loginUser: builder.mutation({
-        query: (userObj) => ({
-          url: "/login",
-          method: "POST",
-          body: userObj,
-        }),
-      }),
+      // registerUser: builder.mutation({
+      //   query: (userObj) => ({
+      //     url: "/register",
+      //     method: "POST",
+      //     body: userObj,
+      //   }),
+      // }),
+      // loginUser: builder.mutation({
+      //   query: (userObj) => ({
+      //     url: "/login",
+      //     method: "POST",
+      //     body: userObj,
+      //   }),
+      // }),
     };
   },
 });
