@@ -4,7 +4,6 @@ import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../features/CartSlice";
 import { useGetProductByIdQuery } from "../services/product-api";
-import { Link } from "react-router-dom";
 const ProductDetail = () => {
   const { id } = useParams();
   const { data = [], isLoading, isError } = useGetProductByIdQuery(id);
@@ -36,15 +35,13 @@ const ProductDetail = () => {
             <h3 className="text-center">${data.price}</h3>
             <p className="text-center">{data.description}</p>
             <div className="text-center">
-              <Button className="mb-3 me-2" as={Link} to="/products"  variant="secondary">Go back to products</Button>
               <Button
                 onClick={() => dispatch(AddToCart(data))}
-                className="btn btn-secondary rounded mb-4 m-2"
+                className="btn btn-secondary rounded mb-4 m-2 p-2"
                 variant="success"
               >
-                Add To Cart
+               <i className="fa fa-shopping-cart"></i> Add
               </Button>
-              <Button className="mb-3 ms-2" as={Link} to="/cart" variant="secondary">Go to cart</Button>
             </div>
           </Col>
           <Col md={6} className="d-flex justify-content-center">
