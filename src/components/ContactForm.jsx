@@ -1,6 +1,9 @@
 import React from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 function ContactForm() {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div>
       <Container className="my-4 py-4">
@@ -8,26 +11,26 @@ function ContactForm() {
           <Col md={5}>
             <h1 className="text-secondary">Get In Touch</h1>
             <p>
-              If You have any Questions Please Do Not Hesitate to Contact us.
+              If you have any questions please do not Hesitate to Contact us.
             </p>
           </Col>
           <Col md={5} className="m-auto">
-            <Form>
+            <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" />
+                <Form.Control type="email" placeholder="Brad@example.com" />
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formBasicName">
                 <Form.Label>Full Name</Form.Label>
-                <Form.Control type="text" placeholder="Enter your Name" />
+                <Form.Control type="text" placeholder="Brad Pitt" />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
                 <Form.Label>Your Message</Form.Label>
-                <Form.Control as="textarea" rows={3} />
+                <Form.Control as="textarea" rows={3} placeholder="Please enter your message here" />
               </Form.Group>
 
               <Button variant="secondary rounded" type="submit">

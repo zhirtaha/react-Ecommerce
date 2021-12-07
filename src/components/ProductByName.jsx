@@ -24,12 +24,12 @@ function ProductByName() {
               <>
                 <Col md={4} key={index}>
                   <Card
-                    style={{ width: "18rem" }}
+                    style={{ width:"18rem"}}
                     border="secondary"
-                    className="m-5 p-4"
+                    className="m-5 p-0"
                     key={index}
                   >
-                    <Card.Img variant="top" src={item.image} />
+                    <Card.Img variant="top" src={item.image} width="300px" height="300px" />
                     <Card.Body className="text-center">
                       <Card.Text>{item.category}</Card.Text>
                       <Card.Title>{item.name}</Card.Title>

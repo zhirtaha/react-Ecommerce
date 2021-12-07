@@ -1,9 +1,14 @@
 import React from "react";
 import { Card, Button, Spinner, Alert } from "react-bootstrap";
+import { useDispatch } from "react-redux";
+import { AddToCart } from "../features/CartSlice";
 import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../services/product-api";
 function ProductCard() {
   const { data = [], isLoading, isError } = useGetProductsQuery();
+
+  const dispatch = useDispatch();
+
   if (isLoading)
     return (
       <Spinner animation="grow" variant="secondary" role="status">
@@ -23,9 +28,9 @@ function ProductCard() {
       {data.map((item, index) => {
         return (
           <Card
-            style={{ width: "17rem" }}
+            style={{ width: "18rem" }}
             border="secondary"
-            className="m-5 p-2"
+            className="m-5 p-0"
             key={index}
           >
             <Card.Img
@@ -42,8 +47,15 @@ function ProductCard() {
                 as={Link}
                 to={`/products/${item._id}`}
                 variant="secondary"
+                className="me-2"
               >
-                Buy Now
+                Read More
+              </Button>
+              <Button
+                onClick={() => dispatch(AddToCart(item))}
+                variant="secondary"
+              >
+                <i className="fa  fa-shopping-cart"></i>
               </Button>
             </Card.Body>
           </Card>

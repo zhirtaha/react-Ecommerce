@@ -1,4 +1,5 @@
 import { Container, Button, Form } from "react-bootstrap";
+import { Link } from "react-router-dom";
 function RegisterForm() {
   return (
     <>
@@ -10,7 +11,7 @@ function RegisterForm() {
             <Form.Label>First Name:</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Your First Name"
+              placeholder="Brad"
               name="firstname"
             />
           </Form.Group>
@@ -18,20 +19,20 @@ function RegisterForm() {
             <Form.Label>Last Name:</Form.Label>
             <Form.Control
               type="text"
-              placeholder="Enter Your Last Name"
+              placeholder="Pitt"
               name="lastname"
             />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Enter email" name="email" />
+            <Form.Control type="email" placeholder="Brad@example.com" name="email" />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Must have at least 6 characters"
               name="password"
             />
           </Form.Group>
@@ -39,6 +40,9 @@ function RegisterForm() {
             Register
           </Button>
         </Form>
+        <div className="text-center">
+         <span className="text-reset">Already Have an Account?</span> <Link to="/login" className="text-success">Log in</Link>
+       </div>
       </Container>
     </>
   );

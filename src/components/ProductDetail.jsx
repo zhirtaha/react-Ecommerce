@@ -27,31 +27,32 @@ const ProductDetail = () => {
 
   return (
     <>
-      <Container className="py-4 my-2">
+      <Container className="py-3 my-4">
         <Row>
-          <Col md={6} className="d-flex flex-column justify-content-center">
-            <h2 className="text-center">{data.name}</h2>
-            <hr />
-            <h3 className="text-center">${data.price}</h3>
-            <p className="text-center">{data.description}</p>
-            <div className="text-center">
-              <Button
-                onClick={() => dispatch(AddToCart(data))}
-                className="btn btn-secondary rounded mb-4 m-2 p-2"
-                variant="success"
-              >
-               <i className="fa fa-shopping-cart"></i> Add
-              </Button>
-            </div>
-          </Col>
-          <Col md={6} className="d-flex justify-content-center">
+          <Col md={5} className="d-flex justify-content-center">
             <img
               src={data.image}
               alt={data.name}
-              height="150px"
-              width="300px"
+              width="240px"
               className="img-fluid"
             />
+          </Col>
+          <Col md={5} className="m-auto">
+            <h2 className="text-center p-3">{data.name}</h2>
+            <p className="text-center">{data.description}</p>
+            <div className="text-center">
+              <h5 className="d-inline-block p-2">price: ${data.price}</h5>
+              <h5 className="d-inline-block ps-3">quantity: {data.quantity}</h5>
+            </div>
+            <div className="text-center">
+              <Button
+                onClick={() => dispatch(AddToCart(data))}
+                className="btn btn-secondary rounded mb-4 m-1 p-2"
+                variant="secondary"
+              >
+                <i className="fa fa-shopping-cart"></i> Add to cart
+              </Button>
+            </div>
           </Col>
         </Row>
       </Container>

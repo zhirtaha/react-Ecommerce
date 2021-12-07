@@ -12,14 +12,14 @@ function LoginForm() {
   return (
     <>
       <Container className="my-3 py-3">
-        <h2 className="text-center text-secondary">Login into Your Account:</h2>
+        <h2 className="text-center text-secondary">Log in into Your Account:</h2>
         <hr />
         <Form>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
-              placeholder="Enter email"
+              placeholder="Brad@example.com"
               name="email"
               value={input.email || ""}
               onChange={handleChange}
@@ -30,7 +30,7 @@ function LoginForm() {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
-              placeholder="Password"
+              placeholder="Must have at least 6 characters"
               name="password"
               value={input.password || ""}
               onChange={handleChange}
@@ -41,7 +41,7 @@ function LoginForm() {
           </Button>
         </Form>
        <div className="text-center">
-         <span className="text-reset">New To Shop Circle create a new account?</span> <Link to="/register" className="text-reset">Sign Up</Link>
+         <span className="text-reset">New To Shop Circle, create a new account?</span> <Link to="/register" className="text-success">Register</Link>
        </div>
       </Container>
     </>

@@ -22,7 +22,7 @@ function CategoryCard() {
         return (
           <Card
             border="secondary"
-            style={{ width: "18rem" }}
+            style={{ width: "20rem" }}
             key={index}
             className="m-5 p-4"
           >

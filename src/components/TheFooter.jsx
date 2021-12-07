@@ -64,9 +64,9 @@ function TheFooter() {
 
         <div
           className="text-center text-dark p-3"
-          style={{backgroundColor: "rgba(0, 0, 0, 0.2)"}}
+          style={{backgroundColor: "#f1f1f1"}}
         >
-          © 2020 Copyright:
+          © 2021 Copyright:
            Shop Circle
         </div>
       </footer>

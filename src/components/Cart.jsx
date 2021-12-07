@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Alert, Table } from "react-bootstrap";
+import { Button, Container, Alert,Table } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { RemoveFromCart } from "../features/CartSlice";
@@ -13,32 +13,24 @@ function Cart() {
     return (
       <Container>
         <div className="text-center">
-          <Alert variant="info" className="display-6">
-            Your Cart Is Empty
+          <Alert variant="warning">
+            it appears that your cart is currently empty.{" "}
+            <Link className="text-dark" to="/products">
+              Browse the collection to find the products
+            </Link>
           </Alert>
         </div>
       </Container>
     );
   };
 
-  const checkbtn = () => {
-    return (
-      <div className="text-center mb-3">
-        <Button as={Link} to="/checkout" variant="success" size="lg">
-          Checkout
-        </Button>
-      </div>
-    );
-  };
-
   return (
-    <>
+    <div>
       <Container className="my-4 py-4">
         <div>
           <Table bordered responsive>
             <thead>
               <tr>
-                <th>#</th>
                 <th className="text-center">Product Image</th>
                 <th className="text-center">Product Name</th>
                 <th className="text-center">Price</th>
@@ -51,7 +43,6 @@ function Cart() {
               {cart.map((item, index) => {
                 return (
                   <tr key={index}>
-                    <td></td>
                     <td className="text-center">
                       <img
                         src={item.image}
@@ -62,7 +53,7 @@ function Cart() {
                       />
                     </td>
                     <td className="text-center">{item.name}</td>
-                    <td className="text-center">{item.price}</td>
+                    <td className="text-center">$ {item.price}</td>
                     <td>
                       <div className="text-center col-xs-12">
                         <Button
@@ -102,9 +93,8 @@ function Cart() {
           </Table>
         </div>
         {cart.length === 0 && emptycart()}
-        {cart.length !== 0 && checkbtn()}
       </Container>
-    </>
+    </div>
   );
 }
 
