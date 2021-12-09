@@ -1,5 +1,5 @@
 import React from "react";
-import { Card, Button, Spinner, Alert } from "react-bootstrap";
+import { Spinner, Alert,Card,Button, Container,Row,Col } from "react-bootstrap";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../features/CartSlice";
 import { Link } from "react-router-dom";
@@ -23,46 +23,49 @@ function ProductCard() {
         </Alert>
       </div>
     );
-  return (
-    <>
-      {data.map((item, index) => {
-        return (
-          <Card
-            style={{ width: "18rem" }}
-            border="secondary"
-            className="m-5 p-0"
-            key={index}
-          >
-            <Card.Img
-              variant="top"
-              height="250px"
-              width="250px"
-              src={item.image}
-            />
-            <Card.Body>
-              <Card.Text>{item.category}</Card.Text>
-              <Card.Title>{item.name}</Card.Title>
-              <Card.Text>${item.price}</Card.Text>
-              <Button
-                as={Link}
-                to={`/products/${item._id}`}
-                variant="secondary"
-                className="me-2"
-              >
-                Read More
-              </Button>
-              <Button
-                onClick={() => dispatch(AddToCart(item))}
-                variant="secondary"
-              >
-                <i className="fa  fa-shopping-cart"></i>
-              </Button>
-            </Card.Body>
-          </Card>
-        );
-      })}
-    </>
-  );
+ return(
+   <>
+    <Container>
+        <Row>
+          {data.map((item, index) => {
+            return (
+              <>
+                <Col md={4} key={index}>
+                  <Card
+                    style={{ width:"18rem"}}
+                    border="secondary"
+                    className="m-5 p-0"
+                    key={index}
+                  >
+                    <Card.Img variant="top" src={item.image} width="300px" height="300px" />
+                    <Card.Body className="text-center">
+                      <Card.Text>{item.category}</Card.Text>
+                      <Card.Title>{item.name}</Card.Title>
+                      <Card.Text>${item.price}</Card.Text>
+                      <Button
+                        as={Link}
+                        to={`/products/${item._id}`}
+                        variant="secondary"
+                        className="me-2"
+                      >
+                        Read More
+                      </Button>
+                      <Button
+                        onClick={() => dispatch(AddToCart(item))}
+                        variant="secondary"
+                      >
+                        <i className="fa  fa-shopping-cart"></i>
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              </>
+            );
+          })}
+        </Row>
+      </Container>
+   </>
+ )
 }
 
 export default ProductCard;

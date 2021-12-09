@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, Container, Alert,Table } from "react-bootstrap";
+import { Button, Container, Alert, Row, Col } from "react-bootstrap";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { RemoveFromCart } from "../features/CartSlice";
@@ -25,76 +25,72 @@ function Cart() {
   };
 
   return (
-    <div>
-      <Container className="my-4 py-4">
-        <div>
-          <Table bordered responsive>
-            <thead>
-              <tr>
-                <th className="text-center">Product Image</th>
-                <th className="text-center">Product Name</th>
-                <th className="text-center">Price</th>
-                <th className="text-center">Quantity</th>
-                <th className="text-center">Total</th>
-                <th className="text-center">Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              {cart.map((item, index) => {
-                return (
-                  <tr key={index}>
-                    <td className="text-center">
-                      <img
-                        src={item.image}
-                        alt={item.name}
-                        className="img-fluid"
-                        height="160px"
-                        width="160px"
-                      />
-                    </td>
-                    <td className="text-center">{item.name}</td>
-                    <td className="text-center">$ {item.price}</td>
-                    <td>
-                      <div className="text-center col-xs-12">
-                        <Button
-                          className="me-1"
-                          variant="secondary"
-                          onClick={() => dispatch(Decrease_Quantity(item._id))}
-                        >
-                          -
-                        </Button>
-                        {item.quantity}
-                        <Button
-                          className="ms-1"
-                          variant="secondary"
-                          onClick={() => dispatch(Increase_Quantity(item._id))}
-                        >
-                          +
-                        </Button>
-                      </div>
-                    </td>
-                    <td className="text-center">
-                      {item.price * item.quantity}
-                    </td>
-                    <td>
-                      <div className="text-center">
-                        <Button
-                          variant="danger"
-                          onClick={() => dispatch(RemoveFromCart(item._id))}
-                        >
-                          <i className="fa fa-trash"></i> Remove
-                        </Button>
-                      </div>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </Table>
-        </div>
+    <>
+      <Container>
+        <Row>
+        <Col md={8}>
+          <h4 className="mt-3 fw-bold">Shopping cart</h4>
+        </Col>
+        <Col>
+          <div className="text-right  mt-3">items: {cart.length}</div>
+        </Col>
+        </Row>
+        {cart.map((item, index) => {
+          return (
+            <Row key={index}>
+              <Row className="border-top border-bottom">
+                <Row className="align-items-center mt-3 mb-3">
+                  <Col md={2}>
+                    <img
+                      src={item.image}
+                      alt={item.image}
+                      className="img-fluid w-75 "
+                    />
+                  </Col>
+                  <Col md={4}>
+                    <Row>
+                      <div className="text-muted">{item.category}</div>
+                    </Row>
+                    <Row>
+                      <div className="fw-bold">{item.name}</div>
+                    </Row>
+                  </Col>
+                  <Col>
+                    <div className="fw-bold">${item.price}</div>
+                  </Col>
+                  <Col>
+                    <Button
+                      onClick={() => dispatch(Decrease_Quantity(item._id))}
+                      variant="secondary"
+                      size="sm"
+                    >
+                      -
+                    </Button>{" "}
+                    <span className="fw-bolder">{item.quantity}</span>{" "}
+                    <Button
+                      onClick={() => dispatch(Increase_Quantity(item._id))}
+                      variant="secondary"
+                      size="sm"
+                    >
+                      +
+                    </Button>
+                  </Col>
+                  <Col>
+                    <Button
+                      onClick={() => dispatch(RemoveFromCart(item._id))}
+                      variant="danger"
+                    >
+                      <i className="fa fa-trash"></i>
+                    </Button>
+                  </Col>
+                </Row>
+              </Row>
+            </Row>
+          );
+        })}
         {cart.length === 0 && emptycart()}
       </Container>
-    </div>
+    </>
   );
 }
 
