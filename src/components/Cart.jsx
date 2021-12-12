@@ -15,7 +15,7 @@ function Cart() {
         <div className="text-center">
           <Alert variant="warning">
             it appears that your cart is currently empty.{" "}
-            <Link className="text-dark" to="/products">
+            <Link className="text-success" to="/products">
               Browse the collection to find the products
             </Link>
           </Alert>
@@ -24,16 +24,39 @@ function Cart() {
     );
   };
 
+  const summary = () => {
+    return (
+      <Col className="mt-4 mb-5 p-3 summary" md={12}>
+        <h5 className="fw-bold">Summary</h5>
+        <hr />
+        <Row>
+          <Col>
+            <div className="fw-light">Items: {cart.length}</div>
+          </Col>
+        </Row>
+        <Row>
+          <Col className="fw-bolder p-4">Total Price:</Col>
+          <Col className="fw-bold p-4 text-success">
+            <div>
+              ${cart.reduce((total,item)=>total+(item.price*item.quantity),0)}
+            </div>
+          </Col>
+        </Row>
+        
+      </Col>
+    );
+  };
+
   return (
     <>
       <Container>
         <Row>
-        <Col md={8}>
-          <h4 className="mt-3 fw-bold">Shopping cart</h4>
-        </Col>
-        <Col>
-          <div className="text-right  mt-3">items: {cart.length}</div>
-        </Col>
+          <Col md={8}>
+            <h4 className="mt-3 fw-bold">Shopping cart</h4>
+          </Col>
+          <Col>
+            <div className="text-right  mt-3">items: {cart.length}</div>
+          </Col>
         </Row>
         {cart.map((item, index) => {
           return (
@@ -56,7 +79,7 @@ function Cart() {
                     </Row>
                   </Col>
                   <Col>
-                    <div className="fw-bold">${item.price}</div>
+                    <div className="fw-bold text-success">${item.price * item.quantity}</div>
                   </Col>
                   <Col>
                     <Button
@@ -80,7 +103,7 @@ function Cart() {
                       onClick={() => dispatch(RemoveFromCart(item._id))}
                       variant="danger"
                     >
-                      <i className="fa fa-trash"></i>
+                      <i className="fa fa-close"></i>
                     </Button>
                   </Col>
                 </Row>
@@ -88,6 +111,7 @@ function Cart() {
             </Row>
           );
         })}
+        {cart.length !== 0 && summary()}
         {cart.length === 0 && emptycart()}
       </Container>
     </>

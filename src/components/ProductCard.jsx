@@ -41,7 +41,7 @@ function ProductCard() {
                     <Card.Body className="text-center">
                       <Card.Text>{item.category}</Card.Text>
                       <Card.Title>{item.name}</Card.Title>
-                      <Card.Text>${item.price}</Card.Text>
+                      <Card.Text className="text-success">${item.price}</Card.Text>
                       <Button
                         as={Link}
                         to={`/products/${item._id}`}

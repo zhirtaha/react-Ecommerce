@@ -45,7 +45,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
               alt="First slide"
             />
             <Carousel.Caption>
@@ -56,7 +56,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://images.unsplash.com/photo-1618329918461-51bb072e0ea5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              src="https://images.unsplash.com/photo-1618329918461-51bb072e0ea5?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
               alt="Second slide"
             />
 
@@ -68,7 +68,7 @@ const Home = () => {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src="https://images.unsplash.com/photo-1607702648223-d0c66d38bea3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              src="https://images.unsplash.com/photo-1520263115673-610416f52ab6?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
               alt="Third slide"
             />
 
@@ -86,7 +86,7 @@ const Home = () => {
             <h1 className="text-center text-secondary mt-5"> Popular Brands</h1>
             <hr />
           </Col>
-          <Col md={3} className="px-5 pt-3 text-center">
+          <Col md={3} className="px-5 pt-5 text-center">
             <img
               src="https://seeklogo.com/images/N/nike-logo-47A65A59D5-seeklogo.com.png"
               alt="Nike"
@@ -104,7 +104,7 @@ const Home = () => {
               width="140px"
             />
           </Col>
-          <Col md={3} className="pt-3 text-center">
+          <Col md={3} className="pt-5 text-center">
             <img
               src="https://seeklogo.com/images/N/New_Balance-logo-F34722CB97-seeklogo.com.png"
               alt="NB"
@@ -122,7 +122,7 @@ const Home = () => {
               width="140px"
             />
           </Col>
-          <Col md={3} className="px-5 pt-4 text-center">
+          <Col md={3} className="px-5 pt-5 text-center">
             <img
               src="https://seeklogo.com/images/T/The_North_Face-logo-C87D970193-seeklogo.com.png"
               alt="The North Face"
@@ -131,7 +131,7 @@ const Home = () => {
               width="140px"
             />
           </Col>
-          <Col md={3} className="px-5 pt-4 text-center">
+          <Col md={3} className="px-5 pt-5 text-center">
             <img
               src="https://seeklogo.com/images/V/Vans-logo-318E41535C-seeklogo.com.png"
               alt="Vans"
@@ -140,7 +140,7 @@ const Home = () => {
               width="140px"
             />
           </Col>
-          <Col md={3} className="px-5 pt-4 text-center">
+          <Col md={3} className="px-5 pt-5 text-center">
             <img
               src="https://seeklogo.com/images/A/air-jordan-logo-66B3A1FAAF-seeklogo.com.png"
               alt="Air Jordan"
@@ -149,7 +149,7 @@ const Home = () => {
               width="140px"
             />
           </Col>
-          <Col md={3} className="px-5 pt-4 text-center">
+          <Col md={3} className="px-5 pt-5 text-center">
             <img
               src="https://seeklogo.com/images/C/Converse-logo-F92AAE1D2F-seeklogo.com.png"
               alt="Converse"

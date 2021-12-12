@@ -13,7 +13,9 @@ function CategoryCard() {
   if (isError)
     return (
       <div className="text-center">
-        <Alert variant="danger">An Error Occured while fetching the data.</Alert>
+        <Alert variant="danger">
+          An Error Occured while fetching the data.
+        </Alert>
       </div>
     );
   return (
@@ -28,7 +30,7 @@ function CategoryCard() {
           >
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>
-              <Card.Text>{item.description.substring(0, 20)}</Card.Text>
+              <Card.Text>{item.description}</Card.Text>
               <Button
                 as={Link}
                 to={`/categories/${item.name}`}

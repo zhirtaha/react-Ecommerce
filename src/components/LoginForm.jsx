@@ -41,7 +41,7 @@ function LoginForm() {
           </Button>
         </Form>
        <div className="text-center">
-         <span className="text-reset">New To Shop Circle, create a new account?</span> <Link to="/register" className="text-success">Register</Link>
+         <span className="text-reset">New To Shop Circle, create a new account?</span> <Link to="/register" className="text-success">Sign Up</Link>
        </div>
       </Container>
     </>

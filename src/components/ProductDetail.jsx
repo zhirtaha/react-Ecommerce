@@ -41,8 +41,8 @@ const ProductDetail = () => {
             <h2 className="text-center p-3">{data.name}</h2>
             <p className="text-center">{data.description}</p>
             <div className="text-center">
-              <h5 className="d-inline-block p-2">price: ${data.price}</h5>
-              <h5 className="d-inline-block ps-3">quantity: {data.quantity}</h5>
+              <h5 className="d-inline-block p-2 text-success">price: ${data.price}</h5>
+              <h5 className="d-inline-block ps-3 text-success">quantity: {data.quantity}</h5>
             </div>
             <div className="text-center">
               <Button

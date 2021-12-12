@@ -9,23 +9,19 @@ function RegisterForm() {
         <Form>
           <Form.Group className="mb-3" controlId="formBasicFirstName">
             <Form.Label>First Name:</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Brad"
-              name="firstname"
-            />
+            <Form.Control type="text" placeholder="Brad" name="firstname" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicLastName">
             <Form.Label>Last Name:</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Pitt"
-              name="lastname"
-            />
+            <Form.Control type="text" placeholder="Pitt" name="lastname" />
           </Form.Group>
           <Form.Group className="mb-3" controlId="formBasicEmail">
             <Form.Label>Email address</Form.Label>
-            <Form.Control type="email" placeholder="Brad@example.com" name="email" />
+            <Form.Control
+              type="email"
+              placeholder="Brad@example.com"
+              name="email"
+            />
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -37,12 +33,15 @@ function RegisterForm() {
             />
           </Form.Group>
           <Button variant="secondary" type="submit">
-            Register
+            Sign Up
           </Button>
         </Form>
         <div className="text-center">
-         <span className="text-reset">Already Have an Account?</span> <Link to="/login" className="text-success">Log in</Link>
-       </div>
+          <span className="text-reset">Already Have an Account?</span>{" "}
+          <Link to="/login" className="text-success">
+            Log in
+          </Link>
+        </div>
       </Container>
     </>
   );
