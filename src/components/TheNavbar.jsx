@@ -1,12 +1,20 @@
 import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { logout } from "../features/UserSlice";
 import { Link } from "react-router-dom";
 const TheNavbar = () => {
   const { cart } = useSelector((state) => state.CartSlice);
+  const { isAuth } = useSelector((state) => state.User);
+  const dispatch = useDispatch();
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#f1f1f1" }} expand="lg" variant="light">
+      <Navbar
+        style={{ backgroundColor: "#f1f1f1" }}
+        expand="lg"
+        variant="light"
+      >
         <Container>
           <Navbar.Brand className="fw-bold">Shop Circle</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -28,10 +36,34 @@ const TheNavbar = () => {
                 Contact
               </Nav.Link>
             </Nav>
-            <Button as={Link} to="/login" variant="outline-secondary" className="ms-2 rounded">
-              <i className="fa fa-sign-in"></i> Log In
-            </Button>
-            <Button as = {Link} to="/register" variant="outline-secondary" className="ms-2 rounded">
+            {!isAuth ? (
+              <Button
+                as={Link}
+                to="/login"
+                variant="outline-secondary"
+                className="ms-2 rounded"
+              >
+                <i className="fa fa-sign-in"></i> Log In
+              </Button>
+            ) : (
+              <Button
+                as={Link}
+                to="/"
+                variant="outline-secondary"
+                className="ms-2 rounded"
+                onClick={() => {
+                  dispatch(logout());
+                }}
+              >
+                <i className="fa fa-sign-out"></i>Log Out
+              </Button>
+            )}
+            <Button
+              as={Link}
+              to="/register"
+              variant="outline-secondary"
+              className="ms-2 rounded"
+            >
               <i className="fa fa-user-plus"></i> Register
             </Button>
             <Button

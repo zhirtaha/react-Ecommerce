@@ -96,7 +96,7 @@ function Cart() {
                     >
                       -
                     </Button>{" "}
-                    <span className="fw-bolder">{item.amount}</span>{" "}
+                    <span className="fw-bolder">{item.quantity}</span>{" "}
                     <Button
                       onClick={() => dispatch(Increase_Quantity(item._id))}
                       variant="secondary"

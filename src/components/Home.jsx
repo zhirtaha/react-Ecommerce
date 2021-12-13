@@ -67,7 +67,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 anim"
-            src="https://c4.wallpaperflare.com/wallpaper/525/203/715/laces-adidas-new-york-eqt-wallpaper-preview.jpg"
+            src="https://wallpaper.dog/large/5487144.jpg"
             alt="Third slide"
           />
 

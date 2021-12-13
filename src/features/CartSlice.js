@@ -11,7 +11,6 @@ const CartSlice = createSlice({
   initialState,
   reducers: {
     AddToCart: (state, action) => {
-      console.log(action.payload);
       const tempcart = state.cart.filter(
         (item) => item._id === action.payload._id
       );
