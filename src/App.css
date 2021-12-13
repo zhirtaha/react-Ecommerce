@@ -1,6 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand&family=Roboto&display=swap');
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "Roboto", sans-serif !important;
   font-size: 18px !important;
 }
 

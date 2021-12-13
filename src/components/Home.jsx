@@ -40,7 +40,7 @@ const Home = () => {
         </Row>
       </Container>
 
-      <Carousel className="carousel my-3"  fade interval={4000}>
+      <Carousel className="carousel my-3" fade interval={4000}>
         <Carousel.Item>
           <img
             className="d-block w-100 anim"
@@ -67,7 +67,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 anim"
-            src="https://images.unsplash.com/photo-1532873626-62910b6145fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            src="https://c4.wallpaperflare.com/wallpaper/525/203/715/laces-adidas-new-york-eqt-wallpaper-preview.jpg"
             alt="Third slide"
           />
 
