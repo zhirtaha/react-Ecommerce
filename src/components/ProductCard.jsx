@@ -32,12 +32,14 @@ function ProductCard() {
               <>
                 <Col md={4} key={index}>
                   <Card
-                    style={{ width:"18rem"}}
+                    style={{ width:"20rem"}}
                     border="secondary"
-                    className="m-5 p-0"
+                    className="shadow m-5 p-0"
                     key={index}
                   >
-                    <Card.Img variant="top" src={item.image} width="300px" height="300px" />
+                    <div className="inner">
+                    <Card.Img variant="top" src={item.image} width="300px" height="300px" className="image" />
+                    </div>
                     <Card.Body className="text-center">
                       <Card.Text>{item.category}</Card.Text>
                       <Card.Title>{item.name}</Card.Title>

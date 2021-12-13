@@ -30,12 +30,14 @@ const ProductDetail = () => {
       <Container className="py-3 my-4">
         <Row>
           <Col md={5} className="d-flex justify-content-center">
+           
             <img
               src={data.image}
               alt={data.name}
               width="240px"
-              className="img-fluid"
+              className="img-fluid anim"
             />
+        
           </Col>
           <Col md={5} className="m-auto">
             <h2 className="text-center p-3">{data.name}</h2>
@@ -47,6 +49,7 @@ const ProductDetail = () => {
             <div className="text-center">
               <Button
                 onClick={() => dispatch(AddToCart(data))}
+
                 className="btn btn-secondary rounded mb-4 m-1 p-2"
                 variant="secondary"
               >

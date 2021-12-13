@@ -22,18 +22,24 @@ function ProductByName() {
           {newdata.map((item, index) => {
             return (
               <>
+              <Col md={12} className="mt-4">
+                <h1 className="text-center text-secondary">{item.category}</h1>
+                <hr />
+              </Col>
                 <Col md={4} key={index}>
                   <Card
-                    style={{ width:"18rem"}}
+                    style={{ width:"20rem"}}
                     border="secondary"
-                    className="m-5 p-0"
+                    className="shadow mt-2 mb-4 p-0"
                     key={index}
                   >
-                    <Card.Img variant="top" src={item.image} width="300px" height="300px" />
+                    <div className="inner">
+                    <Card.Img variant="top" src={item.image} width="250px" height="250px" className="image" />
+                    </div>
                     <Card.Body className="text-center">
                       <Card.Text>{item.category}</Card.Text>
                       <Card.Title>{item.name}</Card.Title>
-                      <Card.Text>${item.price}</Card.Text>
+                      <Card.Text className="text-success">${item.price}</Card.Text>
                       <Button
                         as={Link}
                         to={`/products/${item._id}`}

@@ -26,7 +26,7 @@ function CategoryCard() {
             border="secondary"
             style={{ width: "20rem" }}
             key={index}
-            className="m-5 p-4"
+            className="shadow m-4 p-4"
           >
             <Card.Body>
               <Card.Title>{item.name}</Card.Title>

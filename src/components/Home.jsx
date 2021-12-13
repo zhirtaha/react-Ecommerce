@@ -40,93 +40,91 @@ const Home = () => {
         </Row>
       </Container>
 
-      
-        <Carousel className="carousel my-2" fade>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
-              alt="First slide"
-            />
-            <Carousel.Caption>
-              <h1 className="display-5">Explore New Shoes</h1>
-              <p>%30 sales for all shoes</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://images.unsplash.com/photo-1618329918461-51bb072e0ea5?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
-              alt="Second slide"
-            />
+      <Carousel className="carousel my-3"  fade interval={4000}>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 anim"
+            src="https://images.unsplash.com/photo-1618329918461-51bb072e0ea5?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
+            alt="first slide"
+          />
 
-            <Carousel.Caption>
-              <h1 className="display-5">The season to be joyful</h1>
-              <p>Explore New clothes</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src="https://images.unsplash.com/photo-1520263115673-610416f52ab6?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
-              alt="Third slide"
-            />
+          <Carousel.Caption>
+            <h1 className="display-5">The season to be joyful</h1>
+            <h5>Explore New clothes</h5>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 anim"
+            src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
+            alt="second slide"
+          />
+          <Carousel.Caption>
+            <h1 className="display-5">Explore New Shoes</h1>
+            <h5>%30 sales for all shoes</h5>
+          </Carousel.Caption>
+        </Carousel.Item>
+        <Carousel.Item>
+          <img
+            className="d-block w-100 anim"
+            src="https://images.unsplash.com/photo-1532873626-62910b6145fb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            alt="Third slide"
+          />
 
-            <Carousel.Caption>
-              <h1 className="display-5">Find your own line</h1>
-              <p>gifting season is here</p>
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-      
+          <Carousel.Caption>
+            <h1 className="display-5">Find your own line</h1>
+            <h5>gifting season is here</h5>
+          </Carousel.Caption>
+        </Carousel.Item>
+      </Carousel>
 
       <Container className="d-flex justify-content-center">
         <Row>
           <Col md={12}>
-            <h1 className="text-center text-secondary mt-5"> Popular Brands</h1>
+            <h1 className="text-center text-secondary mt-3"> Popular Brands</h1>
             <hr />
           </Col>
           <Col md={3} className="px-5 pt-5 text-center">
             <img
               src="https://seeklogo.com/images/N/nike-logo-47A65A59D5-seeklogo.com.png"
               alt="Nike"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />
           </Col>
-          <Col md={3} className="pt-3 text-center">
+          <Col md={3} className="pt-3 px-5 text-center">
             <img
               src="https://seeklogo.com/images/A/adidas-logo-9AA835C1C2-seeklogo.com.png"
               alt="Addidas"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />
           </Col>
-          <Col md={3} className="pt-5 text-center">
+          <Col md={3} className="pt-5 px-5 text-center">
             <img
               src="https://seeklogo.com/images/N/New_Balance-logo-F34722CB97-seeklogo.com.png"
               alt="NB"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />
           </Col>
-          <Col md={3} className="pt-3 text-center">
+          <Col md={3} className="pt-3 px-5 text-center">
             <img
               src="https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-thumbnail/s3/0015/0003/brand.gif?itok=nxUfLayt"
               alt="Levis"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />
           </Col>
-          <Col md={3} className="px-5 pt-5 text-center">
+          <Col md={3} className="px-5 pt-5 mt-1  text-center">
             <img
               src="https://seeklogo.com/images/T/The_North_Face-logo-C87D970193-seeklogo.com.png"
               alt="The North Face"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />
@@ -135,25 +133,25 @@ const Home = () => {
             <img
               src="https://seeklogo.com/images/V/Vans-logo-318E41535C-seeklogo.com.png"
               alt="Vans"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />
           </Col>
-          <Col md={3} className="px-5 pt-5 text-center">
+          <Col md={3} className="px-5 pt-5  text-center">
             <img
               src="https://seeklogo.com/images/A/air-jordan-logo-66B3A1FAAF-seeklogo.com.png"
               alt="Air Jordan"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />
           </Col>
-          <Col md={3} className="px-5 pt-5 text-center">
+          <Col md={3} className="px-5 pt-5 mt-4 text-center">
             <img
               src="https://seeklogo.com/images/C/Converse-logo-F92AAE1D2F-seeklogo.com.png"
               alt="Converse"
-              className="img-fluid"
+              className="img-fluid anim"
               height="140px"
               width="140px"
             />

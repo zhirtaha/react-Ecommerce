@@ -31,18 +31,23 @@ function Cart() {
         <hr />
         <Row>
           <Col>
-            <div className="fw-light">Items: {cart.length}</div>
+            <div className="fw-light fw-bold">Total Items: {cart.length}</div>
           </Col>
         </Row>
         <Row>
-          <Col className="fw-bolder p-4">Total Price:</Col>
-          <Col className="fw-bold p-4 text-success">
+          <Col className="fw-bolder p-4" >
+            Total Price:
+          </Col>
+          <Col className="fw-bold p-4 text-success" >
             <div>
-              ${cart.reduce((total,item)=>total+(item.price*item.quantity),0)}
+              $
+              {cart.reduce(
+                (total, item) => total + item.price * item.quantity,
+                0
+              )}
             </div>
           </Col>
         </Row>
-        
       </Col>
     );
   };
@@ -79,7 +84,9 @@ function Cart() {
                     </Row>
                   </Col>
                   <Col>
-                    <div className="fw-bold text-success">${item.price * item.quantity}</div>
+                    <div className="fw-bold text-success">
+                      ${item.price * item.quantity}
+                    </div>
                   </Col>
                   <Col>
                     <Button
@@ -89,7 +96,7 @@ function Cart() {
                     >
                       -
                     </Button>{" "}
-                    <span className="fw-bolder">{item.quantity}</span>{" "}
+                    <span className="fw-bolder">{item.amount}</span>{" "}
                     <Button
                       onClick={() => dispatch(Increase_Quantity(item._id))}
                       variant="secondary"
@@ -103,7 +110,7 @@ function Cart() {
                       onClick={() => dispatch(RemoveFromCart(item._id))}
                       variant="danger"
                     >
-                      <i className="fa fa-close"></i>
+                      <i className="fa fa-trash"></i>
                     </Button>
                   </Col>
                 </Row>
