@@ -49,7 +49,7 @@ const TheNavbar = () => {
               <Button
                 as={Link}
                 to="/"
-                variant="outline-secondary"
+                variant="secondary"
                 className="ms-2 rounded"
                 onClick={() => {
                   dispatch(logout());

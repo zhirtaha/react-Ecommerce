@@ -59,7 +59,7 @@ function LoginForm() {
               })
                 .unwrap()
                 .then((data) => {
-                  console.log("login state", data);
+                  console.log("login token", data);
                   dispatch(login(data.token));
                   navigate("/");
                 });
