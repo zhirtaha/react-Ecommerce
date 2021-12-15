@@ -30,18 +30,19 @@ const CartSlice = createSlice({
     },
 
     Increase_Quantity: (state, action) => {
-      state.cart.forEach((item) => {
-        if (item._id === action.payload) {
-          item.quantity += 1;
-        }
-      });
+      let itemindex = state.cart.findIndex(
+        (item) => item._id === action.payload
+      );
+      console.log(state.cart[itemindex].quantity);
+      if (state.cart[itemindex].amount < state.cart[itemindex].quantity)
+        state.cart[itemindex].amount += 1;
     },
+
     Decrease_Quantity: (state, action) => {
-      state.cart.forEach((item) => {
-        if (item._id === action.payload && item.quantity > 0) {
-          item.quantity -= 1;
-        }
-      });
+      let itemindex = state.cart.findIndex(
+        (item) => item._id === action.payload
+      );
+      if (state.cart[itemindex].amount > 0) state.cart[itemindex].amount -= 1;
     },
   },
 });

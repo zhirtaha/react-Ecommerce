@@ -35,14 +35,12 @@ function Cart() {
           </Col>
         </Row>
         <Row>
-          <Col className="fw-bolder p-4" >
-            Total Price:
-          </Col>
-          <Col className="fw-bold p-4 text-success" >
+          <Col className="fw-bolder p-4">Total Price:</Col>
+          <Col className="fw-bold p-4 text-success">
             <div>
               $
               {cart.reduce(
-                (total, item) => total + item.price * item.quantity,
+                (total, item) => total + item.price * item.amount,
                 0
               )}
             </div>
@@ -64,6 +62,7 @@ function Cart() {
           </Col>
         </Row>
         {cart.map((item, index) => {
+          console.log(item);
           return (
             <Row key={index}>
               <Row className="border-top border-bottom">
@@ -85,7 +84,7 @@ function Cart() {
                   </Col>
                   <Col>
                     <div className="fw-bold text-success">
-                      ${item.price * item.quantity}
+                      ${item.price * item.amount}
                     </div>
                   </Col>
                   <Col>
@@ -96,7 +95,7 @@ function Cart() {
                     >
                       -
                     </Button>{" "}
-                    <span className="fw-bolder">{item.quantity}</span>{" "}
+                    <span className="fw-bolder">{item.amount}</span>{" "}
                     <Button
                       onClick={() => dispatch(Increase_Quantity(item._id))}
                       variant="secondary"

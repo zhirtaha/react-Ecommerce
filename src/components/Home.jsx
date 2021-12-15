@@ -10,7 +10,7 @@ const Home = () => {
           <Col className="m-auto" md={6}>
             <h1 className="text-center fw-bold display-4">
               Welcome to{" "}
-              <span className="text-secondary fw-bold">Shop Circle</span>
+              <span className="text-secondary fw-bolder">Shop Circle</span>
             </h1>
             <p className="display-6 text-center">A circle for shopping!</p>
             <div className="text-center">
@@ -56,7 +56,7 @@ const Home = () => {
         <Carousel.Item>
           <img
             className="d-block w-100 anim"
-            src="https://images.unsplash.com/photo-1552346154-21d32810aba3?ixlib=rb-1.2.1ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8auto=formatfit=cropw=1740q=80"
+            src="https://wallpapercave.com/wp/wp3012861.jpg"
             alt="second slide"
           />
           <Carousel.Caption>
@@ -81,7 +81,7 @@ const Home = () => {
       <Container className="d-flex justify-content-center">
         <Row>
           <Col md={12}>
-            <h1 className="text-center text-secondary mt-3"> Popular Brands</h1>
+            <h1 className="text-center text-secondary mt-3 fw-bolder"> Popular Brands</h1>
             <hr />
           </Col>
           <Col md={3} className="px-5 pt-5 text-center">

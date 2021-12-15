@@ -3,7 +3,7 @@ import { useGetProductsQuery } from "../services/product-api";
 import { AddToCart } from "../features/CartSlice";
 import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
-import { Card, Container, Button, Row, Col, Spinner } from "react-bootstrap";
+import { Container, Button, Row, Spinner } from "react-bootstrap";
 function ProductByName() {
   const { data = [], isLoading } = useGetProductsQuery();
   const { name } = useParams();
@@ -21,43 +21,45 @@ function ProductByName() {
         <Row>
           {newdata.map((item, index) => {
             return (
-              <>
-              <Col md={12} className="mt-4">
-                <h1 className="text-center text-secondary">{item.category}</h1>
-                <hr />
-              </Col>
-                <Col md={4} key={index}>
-                  <Card
-                    style={{ width:"20rem"}}
-                    border="secondary"
-                    className="shadow mt-2 mb-4 p-0"
-                    key={index}
-                  >
-                    <div className="inner">
-                    <Card.Img variant="top" src={item.image} width="250px" height="250px" className="image" />
+              
+                <div className="col-md-4" key={index}>
+                  <div className="card">
+                    <div className="imgBx">
+                      <img
+                        src={item.image}
+                        alt={item.name}
+                        className="img-fluid"
+                      />
                     </div>
-                    <Card.Body className="text-center">
-                      <Card.Text>{item.category}</Card.Text>
-                      <Card.Title>{item.name}</Card.Title>
-                      <Card.Text className="text-success">${item.price}</Card.Text>
+
+                    <div className="contentBx">
+                      <h3>{item.name}</h3>
+
+                      <div className="category">
+                        <h3>Category: {item.category}</h3>
+                      </div>
+
+                      <div className="price">
+                        <h3>Price: ${item.price}</h3>
+                      </div>
                       <Button
                         as={Link}
                         to={`/products/${item._id}`}
                         variant="secondary"
-                        className="me-2"
+                        className="me-4 rounded"
                       >
                         Read More
                       </Button>
                       <Button
-                        onClick={() => dispatch(AddToCart(item))}
+                        onClick={() => dispatch(AddToCart({...item,amount:1}))}
                         variant="secondary"
+                        className="rounded"
                       >
                         <i className="fa  fa-shopping-cart"></i>
                       </Button>
-                    </Card.Body>
-                  </Card>
-                </Col>
-              </>
+                    </div>
+                  </div>
+                </div>
             );
           })}
         </Row>

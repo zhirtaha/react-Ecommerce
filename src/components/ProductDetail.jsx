@@ -48,7 +48,7 @@ const ProductDetail = () => {
             </div>
             <div className="text-center">
               <Button
-                onClick={() => dispatch(AddToCart(data))}
+                onClick={() => dispatch(AddToCart({...data,amount:1}))}
 
                 className="btn btn-secondary rounded mb-4 m-1 p-2"
                 variant="secondary"

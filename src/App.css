@@ -1,25 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand&family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Quicksand&family=Roboto&display=swap");
 body {
   font-family: "Roboto", sans-serif !important;
   font-size: 18px !important;
+  box-sizing: border-box;
 }
 
-/* cards */
-.inner {
-  overflow: hidden;
-}
-.inner .image {
+.anim {
   transition: all 1.5s ease !important;
 }
-.inner:hover .image {
-  transform: scale(1.5);
-}
-
-.anim{
-  transition: all 1.5s ease !important;
-  
-}
-.anim:hover{
+.anim:hover {
   transform: scale(1.5);
 }
 
@@ -31,4 +20,119 @@ body {
 
 .summary {
   background-color: #f1f1f1;
+}
+
+/* Card */
+.container {
+  position: relative;
+}
+
+.container .card {
+  margin: 40px;
+  position: relative;
+  width: 330px;
+  height: 470px;
+  background: #f1f1f1;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.container .card:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #443c3c;
+  clip-path: circle(150px at 80% 20%);
+  transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before {
+  clip-path: circle(300px at 80% -20%);
+}
+
+.container .card:after {
+  position: absolute;
+  top: 30%;
+  left: -20%;
+  font-size: 12em;
+  font-weight: 800;
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.04);
+}
+
+.container .card .imgBx {
+  position: absolute;
+  top: 30%;
+  transform: translateY(-47%);
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  transition: 0.5s;
+}
+
+.container .card .imgBx img {
+  position: absolute;
+  background-size: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 93%;
+  height: 215px;
+}
+
+.container .card .contentBx {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  transition: 1s;
+  z-index: 90;
+}
+
+.container .card:hover .contentBx {
+  height: 196px;
+}
+
+.container .card .contentBx h3 {
+  position: relative;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #000;
+}
+
+.container .card .contentBx .category,
+.container .card .contentBx .price {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.container .card:hover .contentBx .category {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.5s;
+}
+
+.container .card:hover .contentBx .price {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0.6s;
+}
+
+.container .card .contentBx .category h3,
+.container .card .contentBx .price h3 {
+  color:#0a5527;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-right: 10px;
 }

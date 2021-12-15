@@ -51,14 +51,7 @@ function TheFooter() {
               <i className="fa fa-linkedin"></i>
             </a>
 
-            <a
-              className="btn btn-link btn-floating btn-lg text-dark m-1"
-              href="#!"
-              role="button"
-              data-mdb-ripple-color="dark"
-            >
-              <i className="fa fa-github"></i>
-            </a>
+           
           </section>
         </div>
 
