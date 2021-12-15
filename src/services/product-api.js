@@ -13,6 +13,9 @@ export const ApiSlice = createApi({
       getCategories: builder.query({
         query: () => "/categories",
       }),
+      getBrands: builder.query({
+        query: () => "/brands",
+      }),
       getProductById: builder.query({
         query: (id) => `/products/${id}`,
       }),
@@ -37,6 +40,7 @@ export const ApiSlice = createApi({
 export const {
   useGetProductsQuery,
   useGetCategoriesQuery,
+  useGetBrandsQuery,
   useGetProductByIdQuery,
   useRegisterUserMutation,
   useLoginUserMutation,

@@ -3,7 +3,7 @@ import React from "react";
 function TheFooter() {
   return (
     <div>
-      <footer className="text-center text-white" style={{backgroundColor: "#f1f1f1"}}>
+      <footer className="text-center text-white" style={{backgroundColor: "#f8f9fa"}}>
         <div className="container pt-4">
           <section className="mb-4">
             <a
@@ -57,7 +57,7 @@ function TheFooter() {
 
         <div
           className="text-center text-dark p-3"
-          style={{backgroundColor: "#f1f1f1"}}
+          style={{backgroundColor: "#f8f9fa"}}
         >
           © 2021 Copyright:
            Shop Circle

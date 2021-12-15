@@ -15,8 +15,8 @@ function LoginForm() {
   const token = localStorage.getItem("authToken");
   return (
     <>
-      <Container className="my-3 py-3">
-        <h2 className="text-center text-secondary">
+      <Container className="my-3 py-3 col-md-4 col-md-offset-4">
+        <h2 className="text-center fw-bold text-secondary">
           Log in into Your Account:
         </h2>
         <hr />
@@ -50,8 +50,9 @@ function LoginForm() {
               }}
             />
           </Form.Group>
-          <Button
-            variant="secondary"
+         <div className="text-center">
+         <Button
+            variant="success"
             onClick={() => {
               loginfunc({
                 email: email,
@@ -67,10 +68,11 @@ function LoginForm() {
           >
             Log In
           </Button>
+         </div>
         </Form>
-        <div className="text-center">
+        <div className="text-center p-3 pb-0">
           <span className="text-reset">
-            New To Shop Circle, create a new account?
+            New To Shop Circle? create a new account.
           </span>{" "}
           <Link to="/register" className="text-success">
             Sign Up

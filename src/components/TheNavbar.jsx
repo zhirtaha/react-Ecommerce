@@ -11,17 +11,18 @@ const TheNavbar = () => {
   return (
     <div>
       <Navbar
-        style={{ backgroundColor: "#f1f1f1" }}
+      className="bg-light"
         expand="lg"
         variant="light"
       >
         <Container>
-          <Navbar.Brand className="fw-bold">Shop Circle</Navbar.Brand>
+          <Navbar.Brand> <span className="fw-bolder  text-secondary">My Shop</span>
+          </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/">
-                Home
+               <i className="fa fa-home"></i> Home
               </Nav.Link>
               <Nav.Link as={Link} to="/products">
                 Products
@@ -41,9 +42,9 @@ const TheNavbar = () => {
                 as={Link}
                 to="/login"
                 variant="outline-secondary"
-                className="ms-2 rounded"
+                className="ms-2"
               >
-                <i className="fa fa-sign-in"></i> Log In
+                <i className="fa fa-sign-in fa-lg"></i> Log In
               </Button>
             ) : (
               <Button
@@ -55,7 +56,7 @@ const TheNavbar = () => {
                   dispatch(logout());
                 }}
               >
-                <i className="fa fa-sign-out"></i>Log Out
+                <i className="fa fa-sign-out fa-lg"></i>Log Out
               </Button>
             )}
             <Button
@@ -64,7 +65,7 @@ const TheNavbar = () => {
               variant="outline-secondary"
               className="ms-2 rounded"
             >
-              <i className="fa fa-user-plus"></i> Register
+              <i className="fa fa-user-plus fa-lg"></i> Register
             </Button>
             <Button
               as={Link}
@@ -72,7 +73,7 @@ const TheNavbar = () => {
               variant="secondary"
               className="ms-2 rounded"
             >
-              <i className="fa fa-shopping-cart"></i> Cart ({cart.length})
+              <i className="fa fa-shopping-cart fa-lg"></i> Cart ({cart.length})
             </Button>
           </Navbar.Collapse>
         </Container>

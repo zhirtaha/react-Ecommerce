@@ -1,13 +1,11 @@
 import React from "react";
 import { useGetProductsQuery } from "../services/product-api";
-import { AddToCart } from "../features/CartSlice";
-import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { Container, Button, Row, Spinner } from "react-bootstrap";
 function ProductByName() {
   const { data = [], isLoading } = useGetProductsQuery();
   const { name } = useParams();
-  const dispatch = useDispatch();
+ 
   if (isLoading)
     return (
       <Spinner animation="grow" variant="secondary" role="status">
@@ -46,16 +44,10 @@ function ProductByName() {
                         as={Link}
                         to={`/products/${item._id}`}
                         variant="secondary"
+                        size="lg"
                         className="me-4 rounded"
                       >
                         Read More
-                      </Button>
-                      <Button
-                        onClick={() => dispatch(AddToCart({...item,amount:1}))}
-                        variant="secondary"
-                        className="rounded"
-                      >
-                        <i className="fa  fa-shopping-cart"></i>
                       </Button>
                     </div>
                   </div>

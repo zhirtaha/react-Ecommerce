@@ -9,11 +9,12 @@ import CategoriesPage from "./pages/CategoriesPage";
 import ProductByNamePage from "./pages/ProductByNamePage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
-
 import ErrorPage from "./pages/ErrorPage";
 import NavbarPage from "./pages/NavbarPage";
 import FooterPage from "./pages/FooterPage";
 import ProductsPage from "./pages/ProductsPage";
+import ProductByBrandPage from "./pages/ProductByBrandPage"
+
 function App() {
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
         <Route path="/cart" element={<CartPage />} />
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/categories/:name" element={<ProductByNamePage />} />
+        <Route path="/brands/:name" element={<ProductByBrandPage/>} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="*" element={<ErrorPage/>}/>

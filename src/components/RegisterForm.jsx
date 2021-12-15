@@ -31,7 +31,7 @@ function RegisterForm() {
   };
   return (
     <>
-      <Container className="my-3 py-3">
+      <Container className="my-3 py-3 col-md-4 col-md-offset-4">
         <h2 className="text-center text-secondary">Create a New Account:</h2>
         <hr />
         <Form
@@ -88,11 +88,13 @@ function RegisterForm() {
               }}
             />
           </Form.Group>
-          <Button variant="secondary" type="submit">
+          <div className="text-center">
+          <Button variant="success" type="submit">
             Sign Up
           </Button>
+          </div>
         </Form>
-        <div className="text-center">
+        <div className="text-center pb-0 pt-3">
           <span className="text-reset">Already Have an Account?</span>{" "}
           <Link to="/login" className="text-success">
             Log in

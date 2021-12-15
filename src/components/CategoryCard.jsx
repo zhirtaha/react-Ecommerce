@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner, Button, Alert, Col } from "react-bootstrap";
+import { Spinner, Button, Alert, Col} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useGetCategoriesQuery } from "../services/product-api";
 function CategoryCard() {
@@ -23,6 +23,7 @@ function CategoryCard() {
       {data.map((item, index) => {
         return (
           <Col md={4} className="my-4" key={index}>
+           
             <img
               src={item.image}
               alt={item.name}
@@ -39,6 +40,7 @@ function CategoryCard() {
             >
               {item.name}
             </Button>
+        
           </Col>
         );
       })}

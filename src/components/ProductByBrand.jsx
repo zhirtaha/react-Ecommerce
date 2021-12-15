@@ -1,9 +1,11 @@
 import React from "react";
-import { Spinner, Alert, Button, Container, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
 import { useGetProductsQuery } from "../services/product-api";
-function ProductCard() {
-  const { data = [], isLoading, isError } = useGetProductsQuery();
+import { Link, useParams } from "react-router-dom";
+import { Container, Button, Row, Spinner } from "react-bootstrap";
+
+function ProductByBrand() {
+  const { data = [], isLoading } = useGetProductsQuery();
+  const { name } = useParams();
 
   if (isLoading)
     return (
@@ -11,19 +13,12 @@ function ProductCard() {
         <span className="visually-hidden">Loading...</span>
       </Spinner>
     );
-  if (isError)
-    return (
-      <div className="text-center">
-        <Alert variant="danger">
-          An Error Occured while fetching the data.
-        </Alert>
-      </div>
-    );
+  let newdata = data.filter((pro) => pro.brand === name);
   return (
-    <>
+    <div>
       <Container>
         <Row>
-          {data.map((item, index) => {
+          {newdata.map((item, index) => {
             return (
               <div className="col-md-4" key={index}>
                 <div className="card">
@@ -39,7 +34,7 @@ function ProductCard() {
                     <h3>{item.name}</h3>
 
                     <div className="category">
-                      <h3>Category: {item.category}</h3>
+                      <h3>brand: {item.brand}</h3>
                     </div>
 
                     <div className="price">
@@ -54,7 +49,6 @@ function ProductCard() {
                     >
                       Read More
                     </Button>
-                   
                   </div>
                 </div>
               </div>
@@ -62,8 +56,8 @@ function ProductCard() {
           })}
         </Row>
       </Container>
-    </>
+    </div>
   );
 }
 
-export default ProductCard;
+export default ProductByBrand;
