@@ -16,7 +16,7 @@ const TheNavbar = () => {
         variant="light"
       >
         <Container>
-          <Navbar.Brand> <span className="fw-bolder  text-secondary">My Shop</span>
+          <Navbar.Brand> <span className="fw-bolder  text-secondary logo">My Shop</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

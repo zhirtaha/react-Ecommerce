@@ -33,12 +33,12 @@ const Home = () => {
       <Container fluid>
         <Row style={{ backgroundColor: "#f7f7f7" }}>
           <Col className="m-auto" md={6}>
-            <h1 className="text-center fw-bold display-4">
+            <h1 className="text-center fw-bolder display-4">
               Welcome to{" "}
               <span className="text-secondary fw-bolder">My Shop</span>
             </h1>
-            <h3 className=" text-center">Imagine the fashion adventures</h3>
-            <div className="text-center">
+            <h3 className=" text-center">Imagine The Fashion Adventures</h3>
+            <div className="text-center pt-1">
               <Button
                 variant="secondary"
                 size="lg"
@@ -79,8 +79,8 @@ const Home = () => {
             alt="first slide"
           />
           <Carousel.Caption>
-            <h1 className="display-5">Clothes That Shines You</h1>
-            <h5>Explore Your True Style</h5>
+            <h1 className="display-5 fw-bold">Clothes That Shines You</h1>
+            <h3>Explore Your True Style</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -90,8 +90,8 @@ const Home = () => {
             alt="second slide"
           />
           <Carousel.Caption>
-            <h1 className="display-5">A Moments of Your Style</h1>
-            <h5>Wear Your Best</h5>
+            <h1 className="display-5 fw-bold">A Moments of Your Style</h1>
+            <h3>Wear Your Best</h3>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
@@ -101,8 +101,8 @@ const Home = () => {
             alt="Third slide"
           />
           <Carousel.Caption>
-            <h1 className="display-5">Best Sneakers, for Best Style</h1>
-            <h5>A passion of Curiosity</h5>
+            <h1 className="display-5 fw-bold">Best Sneakers, for Best Style</h1>
+            <h3>A passion of Curiosity</h3>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>

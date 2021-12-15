@@ -60,7 +60,7 @@ function TheFooter() {
           style={{backgroundColor: "#f8f9fa"}}
         >
           © 2021 Copyright:
-           Shop Circle
+           My Shop
         </div>
       </footer>
     </div>

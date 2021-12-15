@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Oswald&family=Poppins&family=Quicksand&family=Raleway&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=Oswald&family=Poppins&family=Quicksand&family=Raleway&family=Roboto&family=Shrikhand&display=swap');
 body {
   font-family: "Nunito", sans-serif !important;
   font-size: 18px !important;
   box-sizing: border-box;
 }
-
+.logo{
+ font-family:'Shrikhand', cursive;
+}
 .anim {
   transition: all 1.5s ease !important;
 }
