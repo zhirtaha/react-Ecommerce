@@ -13,7 +13,7 @@ function Cart() {
     return (
       <Container>
         <div className="text-center">
-          <Alert variant="warning">
+          <Alert variant="warning" className="">
             it appears that your cart is currently empty.{" "}
             <Link className="text-success" to="/products">
               Browse the collection to find the products

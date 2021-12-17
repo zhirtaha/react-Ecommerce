@@ -41,7 +41,7 @@ const CartSlice = createSlice({
       let itemindex = state.cart.findIndex(
         (item) => item._id === action.payload
       );
-      if (state.cart[itemindex].amount > 0) state.cart[itemindex].amount -= 1;
+      if (state.cart[itemindex].amount > 1) state.cart[itemindex].amount -= 1;
     },
   },
 });

@@ -1,9 +1,8 @@
 import React from "react";
-
 function TheFooter() {
   return (
     <div>
-      <footer className="text-center text-white" style={{backgroundColor: "#f8f9fa"}}>
+      <footer className="text-center text-white" style={{backgroundColor: "#f5f5f5"}}>
         <div className="container pt-4">
           <section className="mb-4">
             <a
@@ -57,7 +56,7 @@ function TheFooter() {
 
         <div
           className="text-center text-dark p-3"
-          style={{backgroundColor: "#f8f9fa"}}
+          style={{backgroundColor: "#f5f5f5"}}
         >
           © 2021 Copyright:
            My Shop

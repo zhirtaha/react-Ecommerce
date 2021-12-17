@@ -11,7 +11,7 @@ const TheNavbar = () => {
   return (
     <div>
       <Navbar
-      className="bg-light"
+      style={{backgroundColor:"#f5f5f5"}}
         expand="lg"
         variant="light"
       >
@@ -29,9 +29,6 @@ const TheNavbar = () => {
               </Nav.Link>
               <Nav.Link as={Link} to="/categories">
                 Categories
-              </Nav.Link>
-              <Nav.Link as={Link} to="/about">
-                About
               </Nav.Link>
               <Nav.Link as={Link} to="/contact">
                 Contact

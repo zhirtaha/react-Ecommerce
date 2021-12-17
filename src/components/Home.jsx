@@ -31,18 +31,30 @@ const Home = () => {
   return (
     <div>
       <Container fluid>
-        <Row style={{ backgroundColor: "#f7f7f7" }}>
+        <Row style={{ backgroundColor: "#fff" }}>
           <Col className="m-auto" md={6}>
-            <h1 className="text-center fw-bolder display-4">
+            <h1
+              className="text-center fw-bolder display-4"
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            >
               Welcome to{" "}
               <span className="text-secondary fw-bolder">My Shop</span>
             </h1>
-            <h3 className=" text-center">Imagine The Fashion Adventures</h3>
+            <h3
+              className=" text-center"
+              data-aos="fade-right"
+              data-aos-duration="2000"
+            >
+              Imagine The Fashion Adventures
+            </h3>
             <div className="text-center pt-1">
               <Button
-                variant="secondary"
+                data-aos="zoom-in-right"
+                data-aos-duration="2000"
+                variant="success"
                 size="lg"
-                className="rounded rounded-lg"
+                className="rounded-3"
                 as={Link}
                 to="/products"
               >
@@ -52,6 +64,8 @@ const Home = () => {
           </Col>
           <Col md={6} className="d-flex justify-content-center">
             <img
+            data-aos="fade-left"
+            data-aos-duration="2000"
               src="https://cdn-icons-png.flaticon.com/512/2589/2589849.png"
               className="img-fluid"
               alt="background"
@@ -60,6 +74,8 @@ const Home = () => {
             />
             <Col md={6} className="d-flex justify-content-center m-2 p-2">
               <img
+              data-aos="fade-left"
+              data-aos-duration="2000"
                 src="https://cdn-icons-png.flaticon.com/512/5499/5499206.png"
                 className="img-fluid"
                 alt="background"
@@ -71,7 +87,13 @@ const Home = () => {
         </Row>
       </Container>
 
-      <Carousel className="carousel my-1" fade interval={4000}>
+      <Carousel
+        className="carousel my-1"
+        fade
+        interval={4000}
+        data-aos="fade-right"
+        data-aos-duration="2000"
+      >
         <Carousel.Item>
           <img
             className="d-block w-100 anim"
@@ -118,14 +140,17 @@ const Home = () => {
           </Col>
           {data.map((item, index) => {
             return (
-              <Col md={3} className="px-5 pt-5 text-center" key={index}>
+              <Col md={3} className="px-5 py-2 pt-5 text-center" key={index}>
                 <Link to={`/brands/${item.type}`}>
                   <img
+                    data-aos="fade-right"
+                    data-aos-duration="2000"
                     src={item.image}
                     alt={item.type}
-                    className="img-fluid anim"
+                    className="img-fluid"
                     height="140px"
                     width="140px"
+                   
                   />
                 </Link>
               </Col>

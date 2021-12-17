@@ -9,7 +9,7 @@ function ContactForm() {
       <Container className="my-4 py-4">
         <Row>
           <Col md={5}>
-            <h1 className="text-secondary">Get In Touch</h1>
+            <h1 className="text-secondary fw-bold">Get In Touch</h1>
             <p>
               If you have any questions please do not Hesitate to Contact us.
             </p>

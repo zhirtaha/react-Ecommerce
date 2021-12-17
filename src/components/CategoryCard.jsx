@@ -1,5 +1,5 @@
 import React from "react";
-import { Spinner, Button, Alert, Col} from "react-bootstrap";
+import { Spinner, Button, Alert, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { useGetCategoriesQuery } from "../services/product-api";
 function CategoryCard() {
@@ -22,12 +22,17 @@ function CategoryCard() {
     <>
       {data.map((item, index) => {
         return (
-          <Col md={4} className="my-4" key={index}>
-           
+          <Col
+            md={3}
+            className="mx-5 p-3"
+            key={index}
+            data-aos="flip-left"
+            data-aos-duration="2000"
+          >
             <img
               src={item.image}
               alt={item.name}
-              className="img-fluid rounded-circle"
+              className="img-fluid rounded-circle px-4"
               width="220px"
             />
             <h3 className="text-center pt-1 mt-0">{item.name}</h3>
@@ -36,11 +41,10 @@ function CategoryCard() {
               to={`/categories/${item.name}`}
               variant="secondary"
               size="lg"
-              className="rounded"
+              className="rounded rounded-3"
             >
               {item.name}
             </Button>
-        
           </Col>
         );
       })}
