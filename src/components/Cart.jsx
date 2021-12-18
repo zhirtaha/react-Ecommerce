@@ -36,7 +36,7 @@ function Cart() {
         </Row>
         <Row>
           <Col className="fw-bolder p-4">Total Price:</Col>
-          <Col className="fw-bold p-4 text-success">
+          <Col className="fw-bold p-4  text-success">
             <div>
               $
               {cart.reduce(
@@ -45,6 +45,13 @@ function Cart() {
               )}
             </div>
           </Col>
+          <Row> 
+          <Col className="text-center mt-2"> 
+          <Button variant="success rounded-3" onClick={()=>{
+           alert("Congratulations!! you bought a product")
+          }}>Checkout</Button>
+          </Col>
+          </Row>
         </Row>
       </Col>
     );

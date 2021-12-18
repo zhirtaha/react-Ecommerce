@@ -42,8 +42,6 @@ function RegisterForm() {
           onSubmit={(e) => {
             handleSubmit(e);
           }}
-          className="needs-validation"
-          noValidate
         >
           <Form.Group className="mb-3" controlId="formBasicFirstName">
             <Form.Label>First Name:</Form.Label>
@@ -62,6 +60,7 @@ function RegisterForm() {
             <Form.Label>Last Name:</Form.Label>
             <Form.Control
               type="text"
+              required
               placeholder="Pitt"
               name="lastname"
               value={lastName}
@@ -74,6 +73,7 @@ function RegisterForm() {
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
+              required
               placeholder="Brad@example.com"
               name="email"
               value={email}
@@ -87,6 +87,9 @@ function RegisterForm() {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
+              required
+              minlength="6"
+              maxlength="30"
               placeholder="Must have at least 6 characters"
               name="password"
               value={password}

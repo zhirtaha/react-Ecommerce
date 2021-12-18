@@ -29,6 +29,7 @@ function LoginForm() {
             <Form.Label>Email address</Form.Label>
             <Form.Control
               type="email"
+              required
               placeholder="Brad@example.com"
               name="email"
               value={email}
@@ -42,6 +43,9 @@ function LoginForm() {
             <Form.Label>Password</Form.Label>
             <Form.Control
               type="password"
+              required
+              minlength="6"
+              maxlength="30"
               placeholder="Must have at least 6 characters"
               name="password"
               value={password}

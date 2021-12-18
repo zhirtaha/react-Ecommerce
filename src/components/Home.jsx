@@ -140,16 +140,15 @@ const Home = () => {
           </Col>
           {data.map((item, index) => {
             return (
-              <Col md={3} className="px-5 py-3 pt-5 text-center" key={index}>
+              <Col md={3} className="px-5 py-4 pt-5 text-center" key={index}>
                 <Link to={`/brands/${item.type}`}>
                   <img
                     data-aos="fade-right"
                     data-aos-duration="2000"
                     src={item.image}
                     alt={item.type}
-                    className="img-fluid"
-                    height="140px"
-                    width="140px"
+                    className="img-fluid"          
+                    width="135px"
                    
                   />
                 </Link>

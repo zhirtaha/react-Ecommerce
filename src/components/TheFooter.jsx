@@ -84,7 +84,7 @@ function TheFooter() {
         </div>
 
         <div
-          className="text-center text-dark p-3"
+          className="text-center text-dark py-4"
           style={{ backgroundColor: "#f5f5f5" }}
         >
           © 2021 Copyright: My Shop
