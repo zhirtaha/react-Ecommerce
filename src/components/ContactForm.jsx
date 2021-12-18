@@ -8,13 +8,13 @@ function ContactForm() {
     <div>
       <Container className="my-4 py-4">
         <Row>
-          <Col md={5}>
+          <Col md={5} data-aos="fade-right" data-aos-duration="2000">
             <h1 className="text-secondary fw-bold">Get In Touch</h1>
             <p>
               If you have any questions please do not Hesitate to Contact us.
             </p>
           </Col>
-          <Col md={5} className="m-auto">
+          <Col md={5} className="m-auto" data-aos="fade-left" data-aos-duration="2000">
             <Form onSubmit={handleSubmit}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -30,7 +30,11 @@ function ContactForm() {
                 controlId="exampleForm.ControlTextarea1"
               >
                 <Form.Label>Your Message</Form.Label>
-                <Form.Control as="textarea" rows={3} placeholder="Please enter your message here" />
+                <Form.Control
+                  as="textarea"
+                  rows={3}
+                  placeholder="Please enter your message here"
+                />
               </Form.Group>
 
               <Button variant="secondary rounded" type="submit">
