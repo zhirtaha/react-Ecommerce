@@ -140,7 +140,7 @@ const Home = () => {
           </Col>
           {data.map((item, index) => {
             return (
-              <Col md={3} className="px-5 py-2 pt-5 text-center" key={index}>
+              <Col md={3} className="px-5 py-3 pt-5 text-center" key={index}>
                 <Link to={`/brands/${item.type}`}>
                   <img
                     data-aos="fade-right"

@@ -20,6 +20,7 @@ function RegisterForm() {
       email: email,
       password: password,
     };
+
     register(userObj)
       .unwrap()
       .then((data) => {
@@ -29,20 +30,26 @@ function RegisterForm() {
         console.log(err);
       });
   };
+
   return (
     <>
       <Container className="my-3 py-3 col-md-4 col-md-offset-4">
-        <h2 className="text-center text-secondary">Create a New Account:</h2>
+        <h2 className="text-center text-secondary fw-bold">
+          Create a New Account:
+        </h2>
         <hr />
         <Form
           onSubmit={(e) => {
             handleSubmit(e);
           }}
+          className="needs-validation"
+          noValidate
         >
           <Form.Group className="mb-3" controlId="formBasicFirstName">
             <Form.Label>First Name:</Form.Label>
             <Form.Control
               type="text"
+              required
               placeholder="Brad"
               name="firstname"
               value={firstName}
@@ -89,9 +96,9 @@ function RegisterForm() {
             />
           </Form.Group>
           <div className="text-center">
-          <Button variant="success" type="submit">
-            Sign Up
-          </Button>
+            <Button variant="success" type="submit">
+              Sign Up
+            </Button>
           </div>
         </Form>
         <div className="text-center pb-0 pt-3">

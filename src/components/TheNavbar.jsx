@@ -1,5 +1,11 @@
 import React from "react";
 import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt} from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
+import { faHome} from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logout } from "../features/UserSlice";
@@ -22,7 +28,7 @@ const TheNavbar = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/">
-               <i className="fa fa-home"></i> Home
+             <FontAwesomeIcon icon={faHome}/> Home
               </Nav.Link>
               <Nav.Link as={Link} to="/products">
                 Products
@@ -41,19 +47,20 @@ const TheNavbar = () => {
                 variant="outline-secondary"
                 className="ms-2"
               >
-                <i className="fa fa-sign-in fa-lg"></i> Log In
+                <FontAwesomeIcon icon={faSignInAlt}/> Log In
               </Button>
             ) : (
               <Button
                 as={Link}
-                to="/"
+                to="/login"
                 variant="secondary"
                 className="ms-2 rounded"
                 onClick={() => {
                   dispatch(logout());
                 }}
               >
-                <i className="fa fa-sign-out fa-lg"></i>Log Out
+                <FontAwesomeIcon icon={faSignOutAlt}/>
+               Log Out
               </Button>
             )}
             <Button
@@ -62,7 +69,7 @@ const TheNavbar = () => {
               variant="outline-secondary"
               className="ms-2 rounded"
             >
-              <i className="fa fa-user-plus fa-lg"></i> Register
+             <FontAwesomeIcon icon={faUserPlus}/> Register
             </Button>
             <Button
               as={Link}
@@ -70,7 +77,7 @@ const TheNavbar = () => {
               variant="secondary"
               className="ms-2 rounded"
             >
-              <i className="fa fa-shopping-cart fa-lg"></i> Cart ({cart.length})
+              <FontAwesomeIcon icon={faShoppingCart} /> Cart ({cart.length})
             </Button>
           </Navbar.Collapse>
         </Container>

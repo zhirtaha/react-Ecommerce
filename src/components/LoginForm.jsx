@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import { login } from "../features/UserSlice";
 import { useLoginUserMutation } from "../services/product-api";
 function LoginForm() {
-  let [loginfunc, { isLoading, data, error }] = useLoginUserMutation();
+  let [loginfunc, { data, error }] = useLoginUserMutation();
 
   let [email, setEmail] = useState("");
   let [password, setPassword] = useState("");
@@ -50,25 +50,25 @@ function LoginForm() {
               }}
             />
           </Form.Group>
-         <div className="text-center">
-         <Button
-            variant="success"
-            onClick={() => {
-              loginfunc({
-                email: email,
-                password: password,
-              })
-                .unwrap()
-                .then((data) => {
-                  console.log("login token", data);
-                  dispatch(login(data.token));
-                  navigate("/");
-                });
-            }}
-          >
-            Log In
-          </Button>
-         </div>
+          <div className="text-center">
+            <Button
+              variant="success"
+              onClick={() => {
+                loginfunc({
+                  email: email,
+                  password: password,
+                })
+                  .unwrap()
+                  .then((data) => {
+                    console.log("login token", data);
+                    dispatch(login(data.token));
+                    navigate("/");
+                  });
+              }}
+            >
+              Log In
+            </Button>
+          </div>
         </Form>
         <div className="text-center p-3 pb-0">
           <span className="text-reset">
@@ -78,7 +78,6 @@ function LoginForm() {
             Sign Up
           </Link>
         </div>
-        {isLoading && "loging in"}
         {token && token}
         {data && localStorage.setItem("authToken", data.token)}
         {error && error.message}

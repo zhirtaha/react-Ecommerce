@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Spinner, Alert, Button } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../features/CartSlice";
@@ -70,7 +72,7 @@ const ProductDetail = () => {
               </h4>
             </div>
             <div className="text-center">
-              <label className="text-success h4">Size: </label>{" "}
+              <label className="text-success h5">Size: </label>{" "}
               <select className="my-3 text-success psize">
                 <option className="pe-2 border border-1 p-1 m-2">
                   {data.size[0]}
@@ -93,7 +95,7 @@ const ProductDetail = () => {
                 className="rounded-3 mb-4 m-1 p-2"
                 variant={color}
               >
-                <i className="fa fa-shopping-cart"></i> {btn}
+               <FontAwesomeIcon icon={faShoppingCart}/> {btn}
               </Button>
             </div>
           </Col>

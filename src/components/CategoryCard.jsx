@@ -18,10 +18,12 @@ function CategoryCard() {
         </Alert>
       </div>
     );
+   
   return (
     <>
       {data.map((item, index) => {
         return (
+          
           <Col
             md={3}
             className="mx-5 p-3"
@@ -32,9 +34,10 @@ function CategoryCard() {
             <img
               src={item.image}
               alt={item.name}
-              className="img-fluid rounded-circle px-4"
+              className="img-fluid rounded-circle px-3"
               width="220px"
             />
+         
             <h3 className="text-center pt-1 mt-0">{item.name}</h3>
             <Button
               as={Link}
@@ -46,6 +49,7 @@ function CategoryCard() {
               {item.name}
             </Button>
           </Col>
+          
         );
       })}
     </>

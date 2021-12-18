@@ -47,7 +47,7 @@ function ProductCard() {
                       <h3>Price: ${item.price}</h3>
                     </div>
                     <div>
-                      <div class="size">
+                      <div className="size">
                         <h3>Size :</h3>
                          <span>{item.size[0]}</span>
                          <span>{item.size[1]}</span>
