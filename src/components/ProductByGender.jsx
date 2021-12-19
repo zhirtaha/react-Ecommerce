@@ -20,7 +20,7 @@ function ProductByGender() {
         <Row>
           {newdata.map((item, index) => {
             return (
-              <div className="col-md-4 mt-4 mb-4" key={index} data-aos="fade-right" data-aos-duration="2000">
+              <div className="col-md-4 mt-4 mb-4" key={index}>
                 <div className="card">
                   <div className="imgBx">
                     <img

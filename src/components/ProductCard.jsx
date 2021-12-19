@@ -26,7 +26,7 @@ function ProductCard() {
         <Row>
           {data.map((item, index) => {
             return (
-              <div className="col-md-4 " key={index} data-aos="fade-right" data-aos-duration="2000">
+              <div className="col-md-4 " key={index}>
                 <div className="card">
                   <div className="imgBx">
                     <img
