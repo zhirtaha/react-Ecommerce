@@ -28,7 +28,7 @@ function CategoryCard() {
             md={3}
             className="mx-5 p-3"
             key={index}
-            data-aos="flip-left"
+            data-aos="fade-right"
             data-aos-duration="2000"
           >
             <img

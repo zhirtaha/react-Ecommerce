@@ -26,14 +26,14 @@ function GenderCard() {
             md={5}
             className="mx-5 p-3"
             key={index}
-            data-aos="flip-left"
+            data-aos="fade-right"
             data-aos-duration="2000"
           >
             <img
               src={item.image}
               alt={item.name}
               className="img-fluid  px-3"
-              width="400px"
+              width="410px"
             />
 
             <h3 className="text-center pt-1 mt-0">{item.name}</h3>

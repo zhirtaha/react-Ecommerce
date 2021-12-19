@@ -12,41 +12,8 @@ function TheFooter() {
         className="text-center text-white"
         style={{ backgroundColor: "#242424" }}
       >
-        <form>
-          <div className="row d-flex justify-content-center  pt-4 pe-5  align-items-center">
-            <div className="col-auto pt-3">
-              <p className="pt-1  text-white mt-4 ps-0">
-                <strong>Sign up for our newsletter</strong>
-              </p>
-            </div>
-
-            <div className="col-md-4">
-              <div className="form-outline mb-0 mt-4 ms-2 ">
-                <input
-                  type="email"
-                  id="form5Example25"
-                  className="form-control"
-                  placeholder="Enter Your Email Address"
-                />
-              </div>
-            </div>
-
-            <div className="col-auto mb-5 mt-4 mb-md-0 ms-1">
-              <button
-                type="submit"
-                className="btn btn-success mb-0"
-                onClick={(e) => {
-                  e.preventDefault();
-                }}
-              >
-                Subscribe
-              </button>
-            </div>
-          </div>
-        </form>
-
-        <div className="container pt-4">
-          <section className="mb-4">
+        <div className="container pt-3 ps-5">
+          <section className="mb-4 ms-4">
             <a
               className="btn btn-link btn-floating btn-lg text-white m-1"
               href="#!"

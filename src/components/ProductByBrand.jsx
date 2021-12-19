@@ -20,7 +20,12 @@ function ProductByBrand() {
         <Row>
           {newdata.map((item, index) => {
             return (
-              <div className="col-md-4 mt-4 mb-4" key={index} data-aos="fade-right" data-aos-duration="2000">
+              <div
+                className="col-md-4 mt-4 mb-4 "
+                key={index}
+                data-aos="fade-right"
+                data-aos-duration="2000"
+              >
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -31,7 +36,7 @@ function ProductByBrand() {
                   </div>
 
                   <div className="contentBx">
-                    <h2>{item.name}</h2>
+                    <h2 className="fw-bold">{item.name}</h2>
 
                     <div className="category">
                       <h3>brand: {item.brand}</h3>
@@ -39,16 +44,6 @@ function ProductByBrand() {
 
                     <div className="price">
                       <h3>Price: ${item.price}</h3>
-                    </div>
-                    <div>
-                      <div class="size">
-                        <h3>Size :</h3>
-                        <span>{item.size[0]}</span>
-                        <span>{item.size[1]}</span>
-                        <span>{item.size[2]}</span>
-                        <span>{item.size[3]}</span>
-                      </div>
-                      
                     </div>
                     <Button
                       as={Link}

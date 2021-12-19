@@ -1,11 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito&family=Oswald&family=Poppins&family=Quicksand&family=Raleway&family=Roboto&family=Shrikhand&display=swap");
+
 body {
   font-family: "Nunito", sans-serif !important;
   font-size: 18px !important;
-  box-sizing: border-box;
-  overflow: hidden;
-  overflow-y: scroll;
+  overflow-x: hidden !important;
+  
 }
+
 .logo {
   font-family: "Shrikhand", cursive;
 }
@@ -26,11 +27,4 @@ body {
   background-color: #f1f1f1;
 }
 
-.psize span {
-  color: #000;
-  cursor: pointer;
-}
-.psize span:hover{
-  background-color: #1ac929;
-}
 

@@ -1,30 +1,25 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Spinner, Alert, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
+import { faCheck, faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { useParams } from "react-router";
 import { useDispatch } from "react-redux";
 import { AddToCart } from "../features/CartSlice";
-import { RemoveFromCart } from "../features/CartSlice";
 import { useGetProductByIdQuery } from "../services/product-api";
 import "./ProductCard.css";
 const ProductDetail = () => {
   const { id } = useParams();
   const [btn, setBtn] = useState("Add to cart");
-  const [color, setColor] = useState("success");
+  const [icon, setIcon] = useState(faShoppingCart);
   const { data = [], isLoading, isError } = useGetProductByIdQuery(id);
   const dispatch = useDispatch();
 
   const handleBtn = (product) => {
-    if (btn === "Add to cart" && color === "success") {
+    if (btn === "Add to cart") {
       dispatch(AddToCart({ ...product, amount: 1 }));
-      setBtn("Remove from cart");
-      setColor("danger");
-    } else {
-      dispatch(RemoveFromCart(product._id));
-      setBtn("Add to cart");
-      setColor("success");
-    }
+      setBtn("Added to cart");
+      setIcon(faCheck)
+    } 
   };
 
   if (isLoading)
@@ -65,14 +60,14 @@ const ProductDetail = () => {
             <p className="text-center">{data.description}</p>
             <div className="text-center">
               <h4 className="d-inline-block p-2 mb-1 text-success">
-                price: ${data.price}
+               <span className="text-dark"> Price:</span> ${data.price}
               </h4>
               <h4 className="d-inline-block ps-3 text-success">
-                quantity: {data.quantity}
+                <span className="text-dark">quantity:</span> {data.quantity}
               </h4>
             </div>
             <div className="text-center">
-              <label className="text-success h5">Size: </label>{" "}
+              <label className="text-dark h4">Size: </label>{" "}
               <select className="my-3 text-success psize">
                 <option className="pe-2 border border-1 p-1 m-2">
                   {data.size[0]}
@@ -93,9 +88,9 @@ const ProductDetail = () => {
               <Button
                 onClick={() => handleBtn(data)}
                 className="rounded-3 mb-4 m-1 p-2"
-                variant={color}
+                variant="success"
               >
-               <FontAwesomeIcon icon={faShoppingCart}/> {btn}
+               <FontAwesomeIcon icon={icon}/> {btn}
               </Button>
             </div>
           </Col>

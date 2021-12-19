@@ -40,16 +40,7 @@ function ProductByGender() {
                     <div className="price">
                       <h3>Price: ${item.price}</h3>
                     </div>
-                    <div>
-                      <div class="size">
-                        <h3>Size :</h3>
-                        <span>{item.size[0]}</span>
-                        <span>{item.size[1]}</span>
-                        <span>{item.size[2]}</span>
-                        <span>{item.size[3]}</span>
-                      </div>
-                      
-                    </div>
+                    
                     <Button
                       as={Link}
                       to={`/products/${item._id}`}

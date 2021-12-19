@@ -26,7 +26,7 @@ function ProductCard() {
         <Row>
           {data.map((item, index) => {
             return (
-              <div className="col-md-4" key={index} data-aos="fade-right" data-aos-duration="2000">
+              <div className="col-md-4 " key={index} data-aos="fade-right" data-aos-duration="2000">
                 <div className="card">
                   <div className="imgBx">
                     <img
@@ -37,7 +37,7 @@ function ProductCard() {
                   </div>
 
                   <div className="contentBx">
-                    <h2>{item.name}</h2>
+                    <h2 className="fw-bold">{item.name}</h2>
 
                     <div className="category">
                       <h3>Category: {item.category}</h3>
@@ -45,16 +45,6 @@ function ProductCard() {
 
                     <div className="price">
                       <h3>Price: ${item.price}</h3>
-                    </div>
-                    <div>
-                      <div className="size">
-                        <h3>Size :</h3>
-                         <span>{item.size[0]}</span>
-                         <span>{item.size[1]}</span>
-                         <span>{item.size[2]}</span>
-                         <span>{item.size[3]}</span>
-                      </div>
-                      
                     </div>
                     <Button
                       as={Link}
