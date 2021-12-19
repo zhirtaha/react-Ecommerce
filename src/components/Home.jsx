@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import CategoriesList from "./CategoriesList";
+import GenderList from "./GenderList";
 import { useGetBrandsQuery } from "../services/product-api";
 const Home = () => {
   const { data = [], isLoading, isError } = useGetBrandsQuery();
@@ -64,8 +65,8 @@ const Home = () => {
           </Col>
           <Col md={6} className="d-flex justify-content-center">
             <img
-            data-aos="fade-left"
-            data-aos-duration="2000"
+              data-aos="fade-left"
+              data-aos-duration="2000"
               src="https://cdn-icons-png.flaticon.com/512/2589/2589849.png"
               className="img-fluid"
               alt="background"
@@ -74,8 +75,8 @@ const Home = () => {
             />
             <Col md={6} className="d-flex justify-content-center m-2 p-2">
               <img
-              data-aos="fade-left"
-              data-aos-duration="2000"
+                data-aos="fade-left"
+                data-aos-duration="2000"
                 src="https://cdn-icons-png.flaticon.com/512/5499/5499206.png"
                 className="img-fluid"
                 alt="background"
@@ -147,17 +148,20 @@ const Home = () => {
                     data-aos-duration="2000"
                     src={item.image}
                     alt={item.type}
-                    className="img-fluid"          
+                    className="img-fluid"
                     width="135px"
-                   
                   />
                 </Link>
               </Col>
             );
           })}
         </Row>
+      <Row>
+        
+      </Row>
       </Container>
       <CategoriesList />
+      <GenderList/>
     </div>
   );
 };

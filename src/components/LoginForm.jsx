@@ -44,8 +44,8 @@ function LoginForm() {
             <Form.Control
               type="password"
               required
-              minlength="6"
-              maxlength="30"
+              minLength="6"
+              maxLength="30"
               placeholder="Must have at least 6 characters"
               name="password"
               value={password}

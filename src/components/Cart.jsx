@@ -48,7 +48,7 @@ function Cart() {
           <Row> 
           <Col className="text-center mt-2"> 
           <Button variant="success rounded-3" onClick={()=>{
-           alert("Congratulations!! you bought a product")
+           alert("This section is not available yet")
           }}>Checkout</Button>
           </Col>
           </Row>

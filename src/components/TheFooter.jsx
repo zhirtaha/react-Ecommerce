@@ -22,12 +22,23 @@ function TheFooter() {
 
             <div className="col-md-4">
               <div className="form-outline mb-0 mt-4 ms-2 ">
-                <input type="email" id="form5Example25" className="form-control" placeholder="Enter Your Email Address" />
+                <input
+                  type="email"
+                  id="form5Example25"
+                  className="form-control"
+                  placeholder="Enter Your Email Address"
+                />
               </div>
             </div>
 
             <div className="col-auto mb-5 mt-4 mb-md-0 ms-1">
-              <button type="submit" className="btn btn-success mb-0">
+              <button
+                type="submit"
+                className="btn btn-success mb-0"
+                onClick={(e) => {
+                  e.preventDefault();
+                }}
+              >
                 Subscribe
               </button>
             </div>

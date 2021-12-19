@@ -16,6 +16,9 @@ export const ApiSlice = createApi({
       getBrands: builder.query({
         query: () => "/brands",
       }),
+      getGenders: builder.query({
+        query: () => "/genders",
+      }),
       getProductById: builder.query({
         query: (id) => `/products/${id}`,
       }),
@@ -41,6 +44,7 @@ export const {
   useGetProductsQuery,
   useGetCategoriesQuery,
   useGetBrandsQuery,
+  useGetGendersQuery,
   useGetProductByIdQuery,
   useRegisterUserMutation,
   useLoginUserMutation,

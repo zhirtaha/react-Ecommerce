@@ -14,6 +14,7 @@ import NavbarPage from "./pages/NavbarPage";
 import FooterPage from "./pages/FooterPage";
 import ProductsPage from "./pages/ProductsPage";
 import ProductByBrandPage from "./pages/ProductByBrandPage"
+import ProductByGenderPage from "./pages/ProductByGenderPage"
 import AOS from "aos";
 function App() {
   useEffect(() => {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/categories" element={<CategoriesPage />} />
         <Route path="/categories/:name" element={<ProductByNamePage />} />
         <Route path="/brands/:name" element={<ProductByBrandPage/>} />
+        <Route path="/genders/:name" element={<ProductByGenderPage/>} />
         <Route path="/login" element={<LoginPage/>} />
         <Route path="/register" element={<RegisterPage/>} />
         <Route path="*" element={<ErrorPage/>}/>
