@@ -5,7 +5,7 @@ function CategoriesList() {
     <div className="container py-5">
         <div className="row">
           <div className="col-12 text-center">
-            <h1 className="text-secondary mt-3 fw-bolder">Choose from categories</h1>
+            <h1 className="text-secondary mt-2 fw-bolder">Choose from categories</h1>
             <hr/>
             <div className="row justify-content-center">
                 <CategoryCard/>

@@ -3,9 +3,9 @@ import { Navbar, Nav, Container, Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faShoppingCart } from "@fortawesome/free-solid-svg-icons";
 import { faUserPlus } from "@fortawesome/free-solid-svg-icons";
-import { faSignInAlt} from "@fortawesome/free-solid-svg-icons";
-import { faSignOutAlt} from "@fortawesome/free-solid-svg-icons";
-import { faHome} from "@fortawesome/free-solid-svg-icons";
+import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import { faSignOutAlt } from "@fortawesome/free-solid-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { logout } from "../features/UserSlice";
@@ -17,18 +17,20 @@ const TheNavbar = () => {
   return (
     <div>
       <Navbar
-      style={{backgroundColor:"#f5f5f5"}}
+        style={{ backgroundColor: "#f5f5f5" }}
         expand="lg"
         variant="light"
       >
         <Container>
-          <Navbar.Brand> <span className="fw-bolder  text-secondary logo">My Shop</span>
+          <Navbar.Brand>
+            {" "}
+            <span className="fw-bolder  text-secondary logo" as={Link} to="/">My Shop</span>
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ms-auto">
               <Nav.Link as={Link} to="/">
-             <FontAwesomeIcon icon={faHome}/> Home
+                <FontAwesomeIcon icon={faHome} /> Home
               </Nav.Link>
               <Nav.Link as={Link} to="/products">
                 Products
@@ -47,7 +49,7 @@ const TheNavbar = () => {
                 variant="outline-secondary"
                 className="ms-2"
               >
-                <FontAwesomeIcon icon={faSignInAlt}/> Log In
+                <FontAwesomeIcon icon={faSignInAlt} /> Log In
               </Button>
             ) : (
               <Button
@@ -59,8 +61,8 @@ const TheNavbar = () => {
                   dispatch(logout());
                 }}
               >
-                <FontAwesomeIcon icon={faSignOutAlt}/>
-               Log Out
+                <FontAwesomeIcon icon={faSignOutAlt} />
+                Log Out
               </Button>
             )}
             <Button
@@ -69,7 +71,7 @@ const TheNavbar = () => {
               variant="outline-secondary"
               className="ms-2 rounded"
             >
-             <FontAwesomeIcon icon={faUserPlus}/> Register
+              <FontAwesomeIcon icon={faUserPlus} /> Register
             </Button>
             <Button
               as={Link}
