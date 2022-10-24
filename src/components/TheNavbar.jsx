@@ -22,7 +22,7 @@ const TheNavbar = () => {
         variant="light"
       >
         <Container>
-          <Navbar.Brand>
+          <Navbar.Brand as={Link} to="/">
             {" "}
             <span className="fw-bolder  text-secondary logo" as={Link} to="/">My Shop</span>
           </Navbar.Brand>
